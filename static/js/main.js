@@ -4,9 +4,9 @@
     // Navbar on scrolling
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
-            $('.navbar').fadeIn('slow').css('display', 'flex');
+            $('.navbar').stop(true, true).fadeIn(400).css('display', 'flex');
         } else {
-            $('.navbar').fadeOut('slow').css('display', 'none');
+            $('.navbar').stop(true, true).fadeOut(400).css('display', 'none');
         }
     });
 
@@ -111,6 +111,39 @@
         dots: true,
         loop: true,
         items: 1
+    });
+    
+    // Fade-in animation for sections on scroll
+    $(window).on('scroll load', function () {
+        $('.container-fluid, .portfolio-item, .testimonial-carousel, .blog-date').each(function () {
+            if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                $(this).addClass('fade-in-visible');
+            }
+        });
+    });
+    
+    // Improved smooth scrolling for all anchor links
+    $('a[href^="#"]').on('click', function (event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 45
+            }, 1200, 'easeInOutExpo');
+        }
+    });
+    
+    // Highlight current section in navbar
+    $(window).on('scroll', function () {
+        var scrollPos = $(document).scrollTop();
+        $('.navbar-nav a').each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr('href'));
+            if (refElement.length && refElement.position().top - 60 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('.navbar-nav a').removeClass('active');
+                currLink.addClass('active');
+            }
+        });
     });
     
 })(jQuery);
