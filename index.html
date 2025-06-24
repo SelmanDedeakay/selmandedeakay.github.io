@@ -1,440 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head> <!-- jQuery kütüphanesi -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
-    <!-- Yeni fonksiyon -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selman Dedeakayoğulları - AI Engineer Portfolio</title>
+    <meta name="description" content="Jr. AI Engineer specializing in Computer Vision and Large Language Models. Portfolio showcasing projects in ML, NLP, and software development.">
+    <head>
+    
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
     <script>
-      $(document).ready(function() {
-        $('.scroll-to-bottom').on('click', function() {
-          $('html, body').animate({
-            scrollTop: $('#about').offset().top
-          }, 1500);
-        });
-      });
+        // Immediately set theme to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.body.classList.add('theme-loading');
+        })();
     </script>
     
-    <meta charset="utf-8">
-    <title>Selman Dedeakayoğulları</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="static/css/style.css" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a class="navbar-brand font-weight-bold text-primary" href="#home" style="font-size:1.7rem;">Selman Dedeakayoğulları</a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-5 py-0" >
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Qualifications</a>
-                <a href="#skill" class="nav-item nav-link">Skills</a>
-                <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                <a href="#blog" class="nav-item nav-link">Blog</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="mailto:selmandedeakayogullari@gmail.com" class="btn btn-outline-primary d-none d-lg-block font-weight-bold">Contact Me</a>
+<body>
+    <!-- Navigation -->
+    <!-- Update the navigation bar to include theme toggle -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <a href="#home">SD</a>
         </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="static/img/avatar.jpg" alt="">
-                </div>
-                <div class="col-lg-7 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-4">I'm</h3>
-                    <h1 class="display-3 text-uppercase text mb-3" style="color:whitesmoke">Selman</h1>
-                    <div class="typed-text d-none">Computer Engineering Student, Computer Vision Developer</div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="static/Selman-Dedeakayoğulları-Resume-20250623.pdf" class="btn btn-outline-light mr-5" target="_blank">Download CV</a>
-                        <a href="https://www.linkedin.com/in/selmandedeakayoğulları/" class="btn-play" target="_blank">
-                            <svg style="color: #c69500" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                 <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" fill="#c69500"></path> </svg>
-                        </a>
-                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Check out my LinkedIn</h5>
-                    </div>
-                </div>
-            </div>
+        <!-- Update nav-menu to include References -->
+<div class="nav-menu" id="navMenu">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#references" class="nav-link">References</a>
+    <a href="#contact" class="nav-link">Contact</a>
+</div>
+        <!-- Theme Toggle -->
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+            <div class="toggle-ball"></div>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
-    <!-- Header End -->
+</nav>
 
-
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="static/img/about.jpg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">Selman Dedeakayoğulları</h3>
-                    <p><strong>Computer Vision Developer</strong> with a passion for Artificial Intelligence. Dedicated to continuous learning, teamwork, and delivering impactful solutions. Strong communication skills and a drive for excellence.</p>
-                    <div class="row mb-3">
-                        <div class="col-sm-8 py-2"><h6>Phone: <span class="text-secondary">+90 542 538 95 48</span></h6></div>
-                        <div class="col-md-8 py-2"><h6>Email: <span class="text-secondary">selmandedeakayogullari@gmail.com</span></h6></div>
-                        <div class="col-sm-8 py-2"><h6>Address: <span class="text-secondary">Eskişehir, Türkiye</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Freelance: <span class="text-secondary">Available</span></h6></div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Experience</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Expericence</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Eskişehir Technical University</h5>
-                            <p class="mb-2"><strong>Department of Computer Engineering</strong> | <small>2021 - Present</small></p>
-                            <p>As a third year student, I took the classes for my profession. Also lectures about different areas in Computer Science such as Database Management Systems, Internet Programming and Microprocessors.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Vorarlberg University of Applied Sciences</h5>
-                            <p class="mb-2"><strong>Erasmus+ Exchange Program</strong> | <small>5 Months</small></p>
-                            <p>I had an exchange semester in Vorarlberg, Austria. During this period,
-                                 I had the oppurtunity to improve my English, knowing other cultures and meeting with various good teachers. 
-                                 Also I attended the Computer Vision classes in Master's programme volunteerly.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">University of Turkish Aeronautical Association</h5>
-                            <p class="mb-2"><strong>Department of Computer Engineering</strong> | <small>2020-2021</small></p>
-                            <p>Transferred after 1 year to Eskişehir Technical University with GPA 3.43, learned Python and got basic introduction to GUI Design, Machine Learning, NLP, Web Scraping etc.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">SKY Experience Intern</h5>
-                            <p class="mb-2"><strong>Turkish Aerospace Industries (TAI) </strong> | <small>2022 - 3 Months</small></p>
-                            <p>As a SKY Experience Intern, I have been assigned to the Information Management Systems Department, unluckily I left my internship earlier because of Erasmus program.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Computer Vision Intern</h5>
-                            <p class="mb-2"><strong>Visea Innovative</strong> | <small>2022 - 1 Month</small></p>
-                            <p>At my first internship, I developed many classification and
-                                segmentation applications with deep learning by using PyTorch
-                                and Tensorflow.
-                                </p>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Qualification End -->
-
-
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="developer_skills" unique-script-id="w-w-dm-id">
-                    <div class="responsive-container-block bg">
-                      <div class="responsive-container-block content">
-                        <div class="responsive-container-block card">
-                          <div class="responsive-container-block img" style="background-image: url('static/img/theoric.png')!important;" >
-                          </div>
-                          <p class="text-blk desc">
-                            Theoretical
-                          </p>
-                          <p class="text-blk info">
-                            Deep Learning, Fine Tuning, Transfer Learning, Classification, Regression, Object Detection, Instance and Semantic Segmentation
-                          </p>
-                        </div>
-                        <div class="responsive-container-block card">
-                            <div class="responsive-container-block img" style="background-image: url('static/img/coding.png')!important;
-                            background-size: contain;background-repeat: no-repeat;">
-                          </div>
-                          <p class="text-blk desc">
-                            Languages
-                          </p>
-                          <p class="text-blk info">
-                            Python, Java, SQL, HTML, CSS, JavaScript
-                          </p>
-                        </div>
-                        <div class="responsive-container-block card">
-                          <div class="responsive-container-block img" style="background-image: url('static/img/frameworks.png')!important;" >
-                          </div>
-                          <p class="text-blk desc">
-                            Frameworks
-                          </p>
-                          <p class="text-blk info">
-                            OpenCV, TensorFlow, Keras, PyTorch, Scikit-Learn, Pandas, Numpy, Selenium, PyQT5, BeautifulSoup, PyAutoGUI
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </div>
-    <!-- Skill End -->
-
-
-    
-
-
-    
-    <div class="container-fluid pt-5 pb-3" id="portfolio">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Portfolio</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Portfolio</h1>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active"  data-filter="*">All</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Computer Vision</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Natural Language Processing</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Web Scraping</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2 text-center">
-                        <img class="img-fluid rounded w-100 h-75" src="static/img/handrecognition.png" alt=""> <br>
-                        <h4>Media Control Using Hand Gesture Recognition</h4>
-                        <p class="text-secondary">A deep learning project for controlling media players with hand gestures using computer vision.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first text-center">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100 h-75" src="static/img/segmentation.jpg" alt=""> <br>
-                        <h4>Instance Segmentation</h4>
-                        <p class="text-secondary">Implemented instance segmentation models for object detection and image analysis tasks.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first text-center">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100 h-75" src="static/img/gans.png" alt=""> <br>
-                        <h4>Generative AI</h4>
-                        <p class="text-secondary">Explored Generative Adversarial Networks (GANs) for creative AI applications.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first text-center">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100 h-75" src="static/img/facerecognition.jpeg" alt=""> <br>
-                        <h4>Face Recognition</h4>
-                        <p class="text-secondary">Developed face recognition systems using state-of-the-art deep learning techniques.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second text-center">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100 h-75" src="static/img/nlp.gif" alt=""> <br>
-                        <h4>Natural Language Processing</h4>
-                        <p class="text-secondary">Worked on NLP projects including text classification and sentiment analysis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third text-center">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100 h-75" src="static/img/mentorapp.jpeg" alt=""> <br>
-                        <h4>Mentor</h4>
-                        <p class="text-secondary">A web scraping and matching platform for connecting mentors and mentees.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5" id="testimonial">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">References</h1>
-                <h1 class="position-absolute text-uppercase text-primary">References</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="owl-carousel testimonial-carousel">
-                        
-                        <div class="text-center">
-                           
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="static/img/sema.jpeg" style="width: 200px; height: 200px;">
-                            <h5 class="font-weight-bold m-0">Sema CANDEMİR</h5>
-                            <span>Assistant Professor @Eskişehir Technical University</span>
-                        </div>
-                        <div class="text-center">
-                            
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="static/img/mehmetkoc.jpeg" style="width: 200px; height: 200px;">
-                            <h5 class="font-weight-bold m-0">Mehmet KOÇ</h5>
-                            <span>Associate Professor @Eskişehir Technical University</span>
-                        </div>
-                        <div class="text-center">
-
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="static/img/abdullatif.jpeg" style="width: 200px; height: 200px;">
-                            <h5 class="font-weight-bold m-0">Abdullatif BABA</h5>
-                            <span>Associate Professor @Kuwait College of Science and Technology</span>
-                        </div>
-                        <div class="text-center">
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="static/img/alperenenes.jpg" style="width: 200px; height: 200px;">
-                            <h5 class="font-weight-bold m-0">Alperen Enes BAYAR</h5>
-                            <span>AI Research Engineer @Huawei</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
-
-    <!-- Blog Start -->
-    <div class="container-fluid pt-5" id="blog">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Blog</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Latest Blogs</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-5 portfolio-item ">
-                    <div class="position-relative">
-                        <a href="https://medium.com/@selmandedeakayogullari/derinlemesine-ayrılabilir-konvolüsyon-depthwise-separable-convolution-c17baa4010cf" 
-                        target="_blank">
-                        <img class="img-fluid rounded w-100" src="static/img/dsc.gif" alt=""></a>
-                    </div>
-                    <h5 class="font-weight-medium" style="text-align:center">Depth Separable Convolutions (Turkish)</h5>
-                    
-                </div>
-                <div class="col-lg-4 mb-5 portfolio-item ">
-                    <div class="position-relative ">
-                        <a href="https://medium.com/@selmandedeakayogullari/multi-task-cascaded-convolutional-networks-mtcnn-dcaad5ef2e54" 
-                        target="_blank">
-                        <img class="img-fluid rounded w-100" src="static/img/mtcnn.jpeg" alt=""></a>
-                        
-                    </div>
-                    <h5 class="font-weight-medium"  style="text-align:center">Multi-task Cascaded Convolutional Networks (MTCNN)</h5>
+    <!-- Hero Section -->
+    <!-- Update the Hero Section to include profile image -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="profile-image-wrapper">
+                <img src="assets/profile.png" alt="Selman Dedeakayoğulları" class="profile-image">
                 
-                </div>
-                <div class="col-lg-4 mb-5 portfolio-item ">
-                    <div class="position-relative" >
-                        <a href="https://medium.com/@selmandedeakayogullari/sliding-window-algorithm-ab747097ea52" 
-                        target="_blank">
-                        <img class="img-fluid rounded w-100" src="static/img/slidingwindow.gif" alt=""></a>
-                      
-                    </div>
-                    <h5 class="font-weight-medium"  style="text-align:center">Sliding Window Algorithm</h5>
-                  
-                </div>
+                <div class="profile-image-border"></div>
             </div>
-        </div>
-    </div>
-
-
-    <!-- Blog End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Socials</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Social Media</h1>
-            </div>
-            <div class="row justify-content-center" style="margin-top: 2em;">
-                <div class="col-lg-12">
-                    <div class="d-flex justify-content-center mb-12" >
-                        <a class="btn btn-outline-dark btn-social mr-3" style="width:80px;height: 80px;" href="https://github.com/SelmanDedeakay/"><i class="fab fa-github" style="font-size:50px;margin-top: 4px;"></i> </a>
-                        <a class="btn btn-outline-dark btn-social mr-3" style="width:80px;height: 80px;" href="https://www.linkedin.com/in/selman-dedeakayo%C4%9Fullar%C4%B1-443b431a7/"><i class="fab fa-linkedin" style="font-size:50px;margin-top: 4px;"></i> </a>
-                        <a class="btn btn-outline-dark btn-social mr-3" style="width:80px;height: 80px;" href="https://www.instagram.com/slmnddky12/"><i class="fab fa-instagram" aria-hidden="true" style="font-size:50px;margin-top: 4px;"></i> </a>
-                        <a class="btn btn-outline-dark btn-social mr-3" style="width:80px;height: 80px;" href="https://medium.com/@selmandedeakayogullari"><i class="fab fa-medium" style="font-size:40px;margin-top: 8px;"></i> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
-        <div class="container text-center py-5">
-            <p class="m-0">&copy; Selman Dedeakayoğulları <span id="footer-year"></span><br/>Last Update: <span id="footer-update"></span></p>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Scroll to Bottom -->
-    <a class="btn btn-outline-dark px-0" style="scroll-behavior: smooth;">
-        <span class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></span>
+            <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text">Selman Dedeakayoğulları</span>
+            </h1>
+            <h2 class="hero-subtitle">Jr. AI Engineer</h2>
+            <p class="hero-description">
+                Specializing in Large Language Models and Computer Vision
+            </p>
+            <!-- Update the hero-buttons div in the Hero Section -->
+<div class="hero-buttons">
+    <a href="assets/selman-cv.pdf" download="Selman_Dedeakayogullari_CV.pdf" class="btn btn-download">
+        <i class="fas fa-download"></i> Download CV
     </a>
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+</div>
+            <div class="social-links">
+                <a href="https://github.com/SelmanDedeakay" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/selman-dedeakayoğulları" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:selmandedeakayogullari@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-background">
+        <div class="gradient-bg"></div>
+    </div>
+</section>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="static/lib/typed/typed.min.js"></script>
-    <script src="static/lib/easing/easing.min.js"></script>
-    <script src="static/lib/waypoints/waypoints.min.js"></script>
-    <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="static/lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="static/lib/lightbox/js/lightbox.min.js"></script>
-    <!-- Contact Javascript File -->
-    <script src="static/mail/jqBootstrapValidation.min.js"></script>
-    <script src="static/mail/contact.js"></script>
-    <!-- Template Javascript -->
-    <script src="static/js/main.js"></script>
-    <script>
-      // Update footer year and last update date
-      document.getElementById('footer-year').textContent = new Date().getFullYear();
-      document.getElementById('footer-update').textContent = 'June 2025';
-    </script>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Known for combining technical expertise with a positive and engaging team spirit, I work in the field of artificial intelligence and software development, particularly focusing on large language models (LLMs) and computer vision.
+                    </p>
+                    <p>
+                        I enjoy generating original ideas and implementing them in the most practical and effective way. I believe that collaboration amplifies success, and I always strive to elevate both performance and team morale in every project I contribute to.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Eskişehir, Türkiye</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+90 542 538 95 48</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Eskişehir Technical University</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Dec 2023 – March 2025</div>
+                    <div class="timeline-content">
+                        <h3>AI Engineer Intern</h3>
+                        <h4>Arena</h4>
+                        <p>Developing and maintaining chatbots using low-code AI platforms. Creating LLM-based solutions via models like LLaMA, GPT-4o, and GPT-4 Vision.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Nov 2022 – Jan 2023</div>
+                    <div class="timeline-content">
+                        <h3>Software Engineering Intern</h3>
+                        <h4>Turkish Aerospace Industries</h4>
+                        <p>Contributing to backend solutions for different modules.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2022 – Aug 2022</div>
+                    <div class="timeline-content">
+                        <h3>Computer Vision Intern</h3>
+                        <h4>Visea Innovative</h4>
+                        <p>Developed classification and segmentation applications with deep learning using PyTorch and TensorFlow.</p>
+                    </div>
+                </div>
+                <div class="timeline-item education">
+                    <div class="timeline-date">2021 – 2025</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Engineering</h3>
+                        <h4>Eskişehir Technical University</h4>
+                        <p>Computer Engineering</p>
+                    </div>
+                </div>
+                <div class="timeline-item education">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Exchange Semester</h3>
+                        <h4>Vorarlberg University of Applied Sciences</h4>
+                        <p>Erasmus+ Study Programme - Dornbirn, Austria</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-brain project-icon"></i>
+                        <h3>Social Media Analysis for Earthquake Victim Reports</h3>
+                    </div>
+                    <p>TEKNOFEST Hackathon 2024 finalist project, currently evolving as a thesis study.</p>
+                    <div class="project-tags">
+                        <span class="tag">Large Language Models</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-images project-icon"></i>
+                        <h3>Gendiary: New-Gen Social Media</h3>
+                    </div>
+                    <p>A Social Media Application using Stable Diffusion for Creating Content, Software Engineering Course Project.</p>
+                    <div class="project-tags">
+                        <span class="tag">Stable Diffusion</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Web Development</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-camera project-icon"></i>
+                        <h3>Image Captioning Project</h3>
+                    </div>
+                    <p>Fine-tuned several Vision Language Models and optimized pipelines for an AI competition.</p>
+                    <div class="project-tags">
+                        <span class="tag">Vision Language Models</span>
+                        <span class="tag">Fine-tuning</span>
+                        <span class="tag">PyTorch</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-user-check project-icon"></i>
+                        <h3>Face Recognition Application</h3>
+                    </div>
+                    <p>MT-CNN based Face Recognition application. Published an article about it on Medium.</p>
+                    <div class="project-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Deep Learning</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-hand-paper project-icon"></i>
+                        <h3>Media Control with Gesture Recognition</h3>
+                    </div>
+                    <p>Machine Learning Course Term Project using MediaPipe and custom algorithms to detect different gestures.</p>
+                    <div class="project-tags">
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">MediaPipe</span>
+                        <span class="tag">ML</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-city project-icon"></i>
+                        <h3>City Sounds Classification</h3>
+                    </div>
+                    <p>Global AI competition project for urban sound classification using deep learning techniques.</p>
+                    <div class="project-tags">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Audio Processing</span>
+                        <span class="tag">Classification</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-eye"></i> Computer Vision</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">OpenCV</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">YOLO</span>
+                        <span class="skill-item">Stable Diffusion</span>
+                        <span class="skill-item">Vision Language Models</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-comments"></i> Natural Language Processing</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">HuggingFace Transformers</span>
+                        <span class="skill-item">LangChain</span>
+                        <span class="skill-item">LangGraph</span>
+                        <span class="skill-item">Ollama</span>
+                        <span class="skill-item">Smolagents</span>
+                        <span class="skill-item">Prompt Engineering</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-bar"></i> Data Analysis & Visualization</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">Seaborn</span>
+                        <span class="skill-item">Scikit-learn</span>
+                        <span class="skill-item">SQL</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Software Engineering</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Flask</span>
+                        <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">SQLite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- References Section -->
+<section id="references" class="references">
+    <div class="container">
+        <h2 class="section-title">References</h2>
+        <p class="references-subtitle">Professional references available upon request</p>
+        
+        <div class="references-grid">
+            <div class="reference-card">
+                <div class="reference-image-wrapper">
+                    <img src="assets/mehmet_koc.png" alt="Reference 1" class="reference-image">
+                    <div class="reference-overlay"></div>
+                </div>
+                <div class="reference-content">
+                    <h3>Assoc. Prof. Mehmet Koç</h3>
+                    <p class="reference-title">Professor of Computer Science</p>
+                    <p class="reference-org">Eskişehir Technical University</p>
+                </div>
+            </div>
+            
+            <div class="reference-card">
+                <div class="reference-image-wrapper">
+                    <img src="assets/sebastian_hegenbart.png" alt="Reference 2" class="reference-image">
+                    <div class="reference-overlay"></div>
+                </div>
+                <div class="reference-content">
+                    <h3>Dr. Sebastian Hegenbart</h3>
+                    <p class="reference-title">Senior Lecturer</p>
+                    <p class="reference-org">Fachhochschule Vorarlberg</p>
+                </div>
+            </div>
+            
+            <div class="reference-card">
+                <div class="reference-image-wrapper">
+                    <img src="assets/alperen_enes_bayar.png" alt="Reference 3" class="reference-image">
+                    <div class="reference-overlay"></div>
+                </div>
+                <div class="reference-content">
+                    <h3>Alperen Enes Bayar</h3>
+                    <p class="reference-title">Senior AI Research Engineer</p>
+                    <p class="reference-org">TURKSAT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-description">
+                    I'm always interested in hearing about new opportunities and collaborations in AI and machine learning.
+                </p>
+                <div class="contact-info">
+                    <a href="mailto:selmandedeakayogullari@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Mail me</span>
+                    </a>
+                    <a href="tel:+905425389548" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Call me</span>
+                    </a>
+                    <a href="https://linkedin.com/in/selmandedeakayoğulları" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/SelmanDedeakay" target="_blank" class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Chatbot Button and Modal -->
+<div class="chatbot-container">
+    <button class="chatbot-button" id="chatbotButton" aria-label="Open AI Assistant">
+        <i class="fas fa-robot"></i>
+        <span class="chatbot-tooltip">Chat with AI Assistant</span>
+    </button>
+    
+    <div class="chatbot-modal" id="chatbotModal">
+        <div class="chatbot-header">
+            <h3>AI Portfolio Assistant</h3>
+            <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-content" id="chatbotContent">
+            <div class="chatbot-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading AI Assistant...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container"> 
+            <p>&copy; Selman Dedeakayoğulları | June 2025</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Optional: Floating CV Download Button -->
+<a href="assets/selman-cv.pdf" download="Selman_Dedeakayogullari_CV.pdf" class="floating-cv-button" id="floatingCVButton" title="Download CV">
+    <i class="fas fa-file-pdf"></i>
+</a>
 </body>
-
 </html>
