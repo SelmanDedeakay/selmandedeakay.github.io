@@ -449,7 +449,7 @@ section:nth-child(even) {
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .tag {
@@ -587,7 +587,11 @@ section:nth-child(even) {
     box-shadow: var(--shadow-lg);
     padding: 2rem 0;
   }
-
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
   .nav-menu.active {
     left: 0;
   }
