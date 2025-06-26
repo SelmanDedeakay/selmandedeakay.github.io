@@ -362,7 +362,7 @@ class StreamlitChatbotManager {
                     title="Portfolio AI Assistant"
                     frameborder="0"
                     allowfullscreen
-                    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads"
                     style="width: 100%; height: 100%; border: none;"
                 ></iframe>
             </div>
@@ -382,7 +382,7 @@ class StreamlitChatbotManager {
                 title="Portfolio AI Assistant"
                 frameborder="0"
                 allowfullscreen
-                sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads"
             ></iframe>
         </div>
         <div class="scroll-indicator" id="scrollIndicator">
