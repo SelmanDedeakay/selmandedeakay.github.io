@@ -2772,11 +2772,10 @@ body.theme-loaded {
 @media (max-width: 600px) {
   .chatbot-modal {
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     max-height: 100vh;
-    right: 0;
-    bottom: 0;
-    border-radius: 0;          /* Köşeleri kaldır */
+
+     /* Köşeleri kaldır */
     transform: translateY(100%); /* Açılış animasyonu için kapalı pozisyon */
     transition: transform .35s ease;
   }
@@ -2802,19 +2801,11 @@ body.theme-loaded {
 }.chatbot-iframe-wrapper {
   overscroll-behavior: contain; /* Chrome/Android */
   -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
-}@media (min-width:601px) and (max-width: 900px){
-  .chatbot-modal{
-    width: 90vw;
-    height: 80vh;
-    right: 5vw;
-    bottom: 10vh;
-    border-radius: 12px;
-  }
 }/* -----------  Samsung S24+, S23+, Pixel 7 Pro vb. “yüksek” telefonlar  ----------- */
 /* 1) 430 px ve altı genişlik, 850 px ve üstü yükseklik */
 @media screen and (max-width: 430px) and (min-height: 850px) {
   .chatbot-modal{
-    height: 88vh;          /* biraz kısalt */
+    height: 83vh;          /* biraz kısalt */
     bottom: 6vh;           /* yukarı taşı – altta 6 vh boşluk bırak */
     border-radius: 12px;
   }
@@ -2828,15 +2819,27 @@ body.theme-loaded {
   .chatbot-close{
     position: absolute;
     top: calc( 10px + env(safe-area-inset-top) );
-    right: 14px;
+    right: 16px;
     font-size: 26px;       /* dokunması kolay */
+  }
+}@media screen and (max-width: 375px) {
+  .chatbot-modal {
+    height: 82vh;
+    bottom: 4vh;
+    padding-right: 20px; /* sağ boşluk */
+    border-radius: 10px;
+  }
+
+  .chatbot-header {
+    padding-top: calc(12px + env(safe-area-inset-top));
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .chatbot-close {
+    font-size: 22px;
+    top: calc(8px + env(safe-area-inset-top));
+    right: 14px;
   }
 }
 
-/* 2) Genel çözüm – tüm modern telefonlarda güvenli alanı hesaba kat */
-@media (max-width: 600px){
-  .chatbot-modal{
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
