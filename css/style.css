@@ -1828,37 +1828,6 @@ body.theme-loaded {
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
 }
 
-/* Floating CV Button (Optional Alternative) */
-.floating-cv-button {
-  position: fixed;
-  bottom: 110px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    var(--secondary-color),
-    var(--accent-color)
-  );
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-lg);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 998;
-}
-
-.floating-cv-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 30px rgba(124, 58, 237, 0.4);
-}
-
-.floating-cv-button i {
-  font-size: 24px;
-}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
@@ -2255,7 +2224,7 @@ body.theme-loaded {
   }
 
   .reference-image-wrapper {
-    height: 180px;
+    height: 250px;
   }
 }
 
@@ -2315,4 +2284,169 @@ body.theme-loaded {
 
 .reference-slide.next {
   transform: scale(0.9) rotateY(-10deg);
+}
+
+
+.chatbot-try-me-notification {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+    cursor: pointer;
+    transform: scale(0) translateY(20px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    max-width: 200px;
+    animation: tryMeBounce 2s infinite;
+}
+
+.chatbot-try-me-notification.show {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.chatbot-try-me-notification.hide {
+    transform: scale(0) translateY(20px);
+    opacity: 0;
+}
+
+.try-me-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    position: relative;
+}
+
+.try-me-text {
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.try-me-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.try-me-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.try-me-arrow {
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #764ba2;
+}
+
+/* Pulsing animation for chatbot button when notification is shown */
+.chatbot-button.try-me-pulse {
+    animation: tryMePulse 2s infinite;
+}
+
+/* Animations */
+@keyframes tryMeBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    40% {
+        transform: scale(1) translateY(-5px);
+    }
+    60% {
+        transform: scale(1) translateY(-3px);
+    }
+}
+
+@keyframes tryMePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+/* Dark theme support */
+[data-theme="dark"] .chatbot-try-me-notification {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+[data-theme="dark"] .try-me-arrow {
+    border-top-color: #8b5cf6;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .chatbot-try-me-notification {
+        bottom: 90px;
+        right: 20px;
+        max-width: 150px;
+    }
+    
+    .try-me-text {
+        font-size: 13px;
+    }
+    
+    .try-me-content {
+        padding: 10px 12px;
+    }
+}
+
+/* Hover effects */
+.chatbot-try-me-notification:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Accessibility */
+.chatbot-try-me-notification:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.try-me-close:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 1px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .chatbot-try-me-notification {
+        animation: none;
+    }
+    
+    .chatbot-button.try-me-pulse {
+        animation: none;
+    }
+    
+    @keyframes tryMeBounce {
+        0%, 100% {
+            transform: scale(1) translateY(0);
+        }
+    }
 }

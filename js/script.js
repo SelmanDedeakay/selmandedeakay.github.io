@@ -261,7 +261,11 @@ class ChatbotManager {
     
     init() {
         // Button click handler
-        this.button.addEventListener('click', () => this.toggle());
+        this.button.addEventListener('click', () => {
+    if (!this.isOpen) {
+        this.open();
+    }
+});
         
         // Close button handler
         this.closeBtn.addEventListener('click', () => this.close());
@@ -540,11 +544,97 @@ applyThemeToStreamlit() {
         }
     }
 }
+// Enhanced Chatbot with "Try me" notification on every page load
 class StreamlitChatbotManager extends ChatbotManager {
     constructor() {
         super();
         this.setupThemeListener();
         this.setupMessageListener();
+        this.tryMeNotification = null;
+        this.hasInteracted = false;
+        this.initTryMeNotification();
+    }
+    
+    initTryMeNotification() {
+        // Her sayfa yenilendiğinde bildirimi göster - localStorage kontrolü kaldırıldı
+        setTimeout(() => {
+            this.showTryMeNotification();
+        }, 5000); // 5 saniye sonra göster
+    }
+    
+    showTryMeNotification() {
+        if (this.tryMeNotification) return; // Sadece zaten gösteriliyorsa engelle
+        
+        // Bildirim elementini oluştur
+        this.tryMeNotification = document.createElement('div');
+        this.tryMeNotification.className = 'chatbot-try-me-notification';
+        this.tryMeNotification.innerHTML = `
+            <div class="try-me-content">
+                <span class="try-me-text">Try me! 💬</span>
+                <button class="try-me-close" aria-label="Close notification">×</button>
+            </div>
+            <div class="try-me-arrow"></div>
+        `;
+        
+        // Chatbot butonunun yanına konumlandır
+        document.body.appendChild(this.tryMeNotification);
+        
+        /// StreamlitChatbotManager içindeki showTryMeNotification()
+
+this.tryMeNotification.addEventListener('click', (e) => {
+    e.stopPropagation();     // <─ ✔️ olay düğmeye ulaşmaz
+    this.open();
+    this.hideTryMeNotification();
+});
+
+const closeBtn = this.tryMeNotification.querySelector('.try-me-close');
+closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();     // <─ ✔️
+    this.hideTryMeNotification();
+});
+        
+        // Bildirime tıklamak chatbot'u açar
+        this.tryMeNotification.addEventListener('click', () => {
+            this.open();
+            this.hideTryMeNotification();
+        });
+        
+        // Animasyonlu giriş
+        setTimeout(() => {
+            this.tryMeNotification.classList.add('show');
+        }, 100);
+        
+        // Chatbot butonuna titreşim animasyonu ekle
+        this.button.classList.add('try-me-pulse');
+    }
+    
+    hideTryMeNotification() {
+        if (!this.tryMeNotification) return;
+        
+        this.tryMeNotification.classList.add('hide');
+        this.button.classList.remove('try-me-pulse');
+        
+        setTimeout(() => {
+            if (this.tryMeNotification) {
+                this.tryMeNotification.remove();
+                this.tryMeNotification = null;
+            }
+        }, 300);
+        
+        // Bu session için etkileşim durumunu işaretle (sadece session boyunca)
+        this.hasInteracted = true;
+    }
+    
+    open() {
+        super.open();
+        
+        // Chatbot açıldığında try me bildirimini gizle
+        if (this.tryMeNotification) {
+            this.hideTryMeNotification();
+        }
+        
+        // Bu session için etkileşim durumunu işaretle
+        this.hasInteracted = true;
     }
     
     setupThemeListener() {
@@ -556,13 +646,13 @@ class StreamlitChatbotManager extends ChatbotManager {
     }
     
     setupMessageListener() {
-        // Listen for messages from Streamlit iframe
+        // Streamlit iframe'den gelen mesajları dinle
         window.addEventListener('message', (e) => {
-            // Check if message is from Streamlit
+            // Mesajın Streamlit'ten geldiğini kontrol et
             if (e.origin.includes('streamlit.app')) {
                 console.log('Received message from Streamlit:', e.data);
                 
-                // Handle different message types
+                // Farklı mesaj türlerini işle
                 if (e.data.type === 'streamlit-ready') {
                     this.applyThemeToStreamlit();
                 }
@@ -577,7 +667,7 @@ class StreamlitChatbotManager extends ChatbotManager {
         const theme = document.documentElement.getAttribute('data-theme');
         
         try {
-            // Send theme to Streamlit
+            // Streamlit'e tema gönder
             iframe.contentWindow.postMessage({
                 type: 'set-theme',
                 theme: theme,
@@ -593,17 +683,31 @@ class StreamlitChatbotManager extends ChatbotManager {
         }
     }
 }
-// Initialize chatbot when DOM is loaded
+
+// DOM yüklendiğinde chatbot'u başlat
 document.addEventListener('DOMContentLoaded', () => {
     const chatbot = new StreamlitChatbotManager();
     
-    // Optional: Add welcome message after user scrolls
-    let hasScrolled = false;
-    window.addEventListener('scroll', () => {
-        if (!hasScrolled && window.scrollY > 200) {
-            hasScrolled = true;
-            chatbot.showNotification();
-        }
+    // İsteğe bağlı: Kullanıcı farklı bölümlere scroll yaptığında bildirimi tekrar göster
+    let sectionsVisited = new Set();
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                sectionsVisited.add(entry.target.id);
+                
+                // Kullanıcı 3+ bölüm ziyaret ettiyse ama chatbot'u denememiş ve bildirim gösterilmiyorsa
+                if (sectionsVisited.size >= 3 && !chatbot.hasInteracted && !chatbot.tryMeNotification) {
+                    setTimeout(() => {
+                        chatbot.showTryMeNotification();
+                    }, 2000);
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    // Ana bölümleri gözlemle
+    document.querySelectorAll('section[id]').forEach(section => {
+        sectionObserver.observe(section);
     });
 });
 
@@ -836,43 +940,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `color: ${themeManager.getTheme() === 'dark' ? '#60a5fa' : '#2563eb'}; font-size: 16px; font-weight: bold;`);
 });
 
-// CV Download tracking
-document.addEventListener('DOMContentLoaded', () => {
-    // Track CV downloads
-    const cvButtons = document.querySelectorAll('[download*="CV"]');
-    cvButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            console.log('CV downloaded');
-            // You can add analytics tracking here
-            
-            // Show success message
-            showNotification('CV download started!', 'success');
-        });
-    });
-    
-    // Animate floating CV button
-    const floatingCV = document.getElementById('floatingCVButton');
-    if (floatingCV) {
-        let isVisible = false;
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            if (scrolled > 300 && !isVisible) {
-                floatingCV.style.transform = 'scale(1)';
-                floatingCV.style.opacity = '1';
-                isVisible = true;
-            } else if (scrolled <= 300 && isVisible) {
-                floatingCV.style.transform = 'scale(0)';
-                floatingCV.style.opacity = '0';
-                isVisible = false;
-            }
-        });
-        
-        // Initial state
-        floatingCV.style.transform = 'scale(0)';
-        floatingCV.style.opacity = '0';
-        floatingCV.style.transition = 'all 0.3s ease';
-    }
-});
 
 // Notification function
 function showNotification(message, type = 'info') {
@@ -1041,6 +1108,7 @@ window.addEventListener('load', () => {
     document.body.classList.remove('theme-loading');
     document.body.classList.add('theme-loaded');
 });
+
 
 // Console message
 console.log('%c Welcome to Selman\'s Portfolio! 🚀', 
