@@ -2772,7 +2772,7 @@ body.theme-loaded {
 @media (max-width: 600px) {
   .chatbot-modal {
     width: 100vw;
-    height: 85vh;
+    height: 78vh;
     max-height: 100vh;
 
      /* Köşeleri kaldır */
