@@ -854,9 +854,10 @@ section:nth-child(even) {
   display: flex;
   flex-direction: column;
   opacity: 0;
-  transform: scale(0.9) translateY(20px);
+  transform-origin: bottom right;
+  transform: scale(0.1) translate(150%, 150%);
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: none;
   z-index: 999;
 }
 
@@ -2528,4 +2529,80 @@ body.theme-loaded {
     width: 150px;
     height: 150px;
   }
+}/* style.css dosyasına ekle */
+@keyframes scaleOpen {
+  0% {
+    transform: scale(0.1) translate(150%, 150%);
+    opacity: 0;
+    transform-origin: bottom right;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+    transform-origin: bottom right;
+  }
+}
+
+@keyframes scaleClose {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+    transform-origin: bottom right;
+  }
+  100% {
+    transform: scale(0.1) translate(150%, 150%);
+    opacity: 0;
+    transform-origin: bottom right;
+  }
+}
+
+.chatbot-modal.active {
+  animation: scaleOpen 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.chatbot-modal.minimizing {
+  animation: scaleClose 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}/* style.css dosyasına ekle */
+@keyframes popFromButton {
+  0% {
+    transform: scale(0.1) translate(70%, 70%);
+    opacity: 0;
+    transform-origin: bottom right;
+  }
+  80% {
+    transform: scale(1.05) translate(0, 0);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes shrinkToButton {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.05) translate(0, 0);
+  }
+  100% {
+    transform: scale(0.1) translate(70%, 70%);
+    opacity: 0;
+    transform-origin: bottom right;
+  }
+}
+
+.chatbot-modal.active {
+  animation: popFromButton 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.chatbot-modal.minimizing {
+  animation: shrinkToButton 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}.chatbot-modal {
+  /* ... diğer stiller ... */
+  transform-origin: bottom right;
+  transform: scale(0.1);
+  opacity: 0;
+  transition: none;
 }
