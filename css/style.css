@@ -2810,4 +2810,33 @@ body.theme-loaded {
     bottom: 10vh;
     border-radius: 12px;
   }
+}/* -----------  Samsung S24+, S23+, Pixel 7 Pro vb. “yüksek” telefonlar  ----------- */
+/* 1) 430 px ve altı genişlik, 850 px ve üstü yükseklik */
+@media screen and (max-width: 430px) and (min-height: 850px) {
+  .chatbot-modal{
+    height: 88vh;          /* biraz kısalt */
+    bottom: 6vh;           /* yukarı taşı – altta 6 vh boşluk bırak */
+    border-radius: 12px;
+  }
+
+  /* Header’ı çentik / sensör alanından uzaklaştır */
+  .chatbot-header{
+    padding-top: calc( 14px + env(safe-area-inset-top) );
+  }
+
+  /* Kapatma butonunu net konumlandır */
+  .chatbot-close{
+    position: absolute;
+    top: calc( 10px + env(safe-area-inset-top) );
+    right: 14px;
+    font-size: 26px;       /* dokunması kolay */
+  }
+}
+
+/* 2) Genel çözüm – tüm modern telefonlarda güvenli alanı hesaba kat */
+@media (max-width: 600px){
+  .chatbot-modal{
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
