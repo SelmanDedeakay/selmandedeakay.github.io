@@ -97,41 +97,6 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
-// Typing effect for hero title (optional)
-const heroTitle = document.querySelector('.hero-title');
-if (heroTitle) {
-    const text = "Hi, I'm ";
-    const name = "Selman Dedeakayoğulları";
-    let index = 0;
-    
-    // Clear the content initially
-    heroTitle.innerHTML = '';
-    
-    function typeWriter() {
-        if (index < text.length) {
-            heroTitle.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 50);
-        } else if (index === text.length) {
-            heroTitle.innerHTML += '<span class="gradient-text"></span>';
-            const gradientSpan = heroTitle.querySelector('.gradient-text');
-            let nameIndex = 0;
-            
-            function typeName() {
-                if (nameIndex < name.length) {
-                    gradientSpan.textContent += name.charAt(nameIndex);
-                    nameIndex++;
-                    setTimeout(typeName, 50);
-                }
-            }
-            typeName();
-        }
-    }
-    
-    // Start typing effect after page loads
-    setTimeout(typeWriter, 500);
-}
-
 // Project cards hover effect
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach(card => {
@@ -822,6 +787,7 @@ class ThemeManager {
         }, 300);
         
         // Dispatch custom event
+        window.dispatchEvent(new Event('scroll'));
         window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
     }
     

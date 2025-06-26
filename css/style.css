@@ -517,7 +517,7 @@ section:nth-child(even) {
 
 .contact-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1.5rem;
 }
 
@@ -2449,4 +2449,83 @@ body.theme-loaded {
             transform: scale(1) translateY(0);
         }
     }
+}/* Updated Hero Content Layout */
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+/* Adjust profile image wrapper for side layout */
+.hero .profile-image-wrapper {
+  flex-shrink: 0;
+  margin: 0;
+  width: 300px;
+  height: 300px;
+}
+
+/* Remove center alignment from hero elements */
+.hero-title,
+.hero-subtitle,
+.hero-description {
+  text-align: left;
+}
+
+.hero-buttons {
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  justify-content: flex-start;
+}
+
+/* Mobile Responsive Updates */
+@media (max-width: 968px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .hero .profile-image-wrapper {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 2rem;
+  }
+  
+  .hero-title,
+  .hero-subtitle,
+  .hero-description {
+    text-align: center;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .profile-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero .profile-image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
 }
