@@ -2768,4 +2768,46 @@ body.theme-loaded {
   .streamlit-iframe {
     min-height: 500px;
   }
+}/* 1) < 600 px’te tam ekran bottom-sheet */
+@media (max-width: 600px) {
+  .chatbot-modal {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;          /* Köşeleri kaldır */
+    transform: translateY(100%); /* Açılış animasyonu için kapalı pozisyon */
+    transition: transform .35s ease;
+  }
+
+  /* Açık hâlin animasyonu */
+  .chatbot-modal.active {
+    transform: translateY(0);
+  }
+
+  /* Kapatırken aşağı doğru kaydır */
+  .chatbot-modal.minimizing {
+    transform: translateY(100%);
+  }
+
+  /* Başlık bölümünü daha ince yapalım */
+  .chatbot-header {
+    padding: 14px 16px;
+  }
+
+  .chatbot-close {
+    font-size: 24px;   /* Dokunma alanını büyüt */
+  }
+}.chatbot-iframe-wrapper {
+  overscroll-behavior: contain; /* Chrome/Android */
+  -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
+}@media (min-width:601px) and (max-width: 900px){
+  .chatbot-modal{
+    width: 90vw;
+    height: 80vh;
+    right: 5vw;
+    bottom: 10vh;
+    border-radius: 12px;
+  }
 }

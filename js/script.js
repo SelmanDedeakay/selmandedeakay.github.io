@@ -454,6 +454,7 @@ class StreamlitChatbotManager {
   }
 
   initializeResize() {
+    if (window.innerWidth <= 600) return;
     const resizeHandle = this.content.querySelector(".chatbot-resize-handle");
     if (!resizeHandle) return;
 
@@ -514,7 +515,21 @@ class StreamlitChatbotManager {
   }
 
   open() {
-    this.isOpen = true;
+  this.isOpen = true;
+  document.body.style.overflow = 'hidden';
+  this.startY = null;
+this.modal.addEventListener('touchstart', e => { 
+  this.startY = e.touches[0].clientY;
+}, {passive:true});
+
+this.modal.addEventListener('touchmove', e => {
+  if(this.startY===null) return;
+  const delta = e.touches[0].clientY - this.startY;
+  if(delta > 60) {      // 60 px aşağı çektiyse
+     this.close();
+     this.startY = null;
+  }
+}, {passive:true});
     const offset = this.calculateButtonPosition();
     this.modal.style.transform = `scale(0.1) translate(${offset.x}%, ${offset.y}%)`;
     this.modal.style.opacity = '0';
@@ -536,8 +551,9 @@ class StreamlitChatbotManager {
     this.button.classList.remove("pulse", "try-me-pulse");
   }
 
-  close() {
-    this.isOpen = false;
+close() {
+  this.isOpen = false;
+  document.body.style.overflow = '';  
     this.modal.classList.add('minimizing');
     this.button.classList.remove('active');
     
