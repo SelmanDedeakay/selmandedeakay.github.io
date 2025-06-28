@@ -547,11 +547,6 @@ class ThemeManager {
   toggleTheme() {
     this.currentTheme = this.currentTheme === "light" ? "dark" : "light";
     this.setTheme(this.currentTheme);
-
-    DOM.themeToggle.style.transform = "translateY(-50%) rotate(180deg)";
-    setTimeout(() => {
-      DOM.themeToggle.style.transform = "translateY(-50%) rotate(0deg)";
-    }, 300);
   }
 
   setTheme(theme) {
