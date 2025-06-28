@@ -11,7 +11,271 @@ const CONFIG = {
   chatbotPreloadDelay: 0,
   streamlitUrl: "https://portfolio-chatbot-sdedeakayogullari.streamlit.app/?embed=true"
 };
-
+// ===== Translations =====
+const translations = {
+  en: {
+    // Navigation
+    nav: {
+      home: "Home",
+      about: "About",
+      experience: "Experience",
+      projects: "Projects",
+      skills: "Skills",
+      awards: "Awards",
+      references: "References",
+      blog: "Blog",
+      contact: "Contact"
+    },
+    
+    // Hero Section
+    hero: {
+      greeting: "Hi, I'm",
+      title: "Jr. AI Engineer",
+      description: "Specializing in Large Language Models and Computer Vision",
+      downloadCV: "Download CV"
+    },
+    
+    // About Section
+    about: {
+      title: "About Me",
+      text1: "Known for combining technical expertise with a positive and engaging team spirit, I work in the field of artificial intelligence and software development, particularly focusing on large language models (LLMs) and computer vision.",
+      text2: "I enjoy generating original ideas and implementing them in the most practical and effective way. I believe that collaboration amplifies success, and I always strive to elevate both performance and team morale in every project I contribute to.",
+      location: "Eskişehir, Türkiye",
+      university: "Eskişehir Technical University"
+    },
+    
+    // Experience Section
+    experience: {
+      title: "Experience & Education",
+      aiEngineerIntern: "AI Engineer Intern",
+      softwareEngineerIntern: "Software Engineering Intern",
+      computerVisionIntern: "Computer Vision Intern",
+      bachelor: "Bachelor of Engineering",
+      exchange: "Exchange Semester",
+      transferred: "Transferred Student",
+      graduatedWith: "Graduated with GPA",
+      transferredAfter: "Transferred after 1st year with GPA",
+      descriptions: {
+    arena1: "Developing and maintaining enterprise-grade chatbots for clients in Turkey and abroad using Druid AI, a low-code conversational AI platform. Responsible for building tailored chatbot solutions, delivering proof-of-concepts (PoCs), and ensuring ongoing support and iteration based on client feedback.",
+    arena2: "In parallel, creating advanced solutions powered by LLaMA, GPT-4, GPT-4o, and GPT-4 Vision, with a focus on integrating multimodal understanding and LLM-driven workflows into conversational systems.",
+    tai1: "Contributed to backend development for various internal modules, focusing on scalable and maintainable software solutions within a multidisciplinary engineering environment.",
+    tai2: "Although I had to leave the internship early due to my upcoming study abroad program, the experience provided valuable insight into corporate software development practices and large-scale system integration.",
+    visea1: "Developed deep learning-based classification and segmentation applications using PyTorch and TensorFlow. Worked with various architectures including ResNet, U-Net, MobileNet, EfficientNet, and VGG, adapting them to solve real-world computer vision problems.",
+    visea2: "Contributed to the full pipeline from data preprocessing to model evaluation, experimenting with architecture selection and fine-tuning strategies to optimize performance for different use cases.",
+    exchange: "Studied AI-focused courses in an international setting. Voluntarily attended a Master's level Computer Vision course alongside MSc students to deepen technical knowledge."
+  }
+    },
+     
+    // Projects Section
+    projects: {
+      title: "Featured Projects",
+      socialMediaAnalysis: "Social Media Analysis for Earthquake Victim Reports",
+      gendiary: "Gendiary: New-Gen Social Media",
+      portfolioBot: "Agentic Portfolio Bot",
+      imageCaptioning: "Image Captioning Project",
+      faceRecognition: "Face Recognition Application",
+      gestureControl: "Media Control with Gesture Recognition",
+        descriptions: {
+    social1: "Developed a multimodal AI system combining LLM-based information extraction from social media with drone-based visual verification.",
+    social2: "Achieved high accuracy in identifying urgent needs, locations, and structural damage to support real-time disaster response.",
+    gendiary: "Developed an AI-powered diary app that generates personalized, context-aware images from user photos using Stable Diffusion and PyTorch, delivered via a Flask REST API with dynamic prompt management and GPU optimization.",
+    portfolio1: "Developed an AI-powered portfolio chatbot using Google Gemini and RAG, which is fully functional in my portfolio website live.",
+    portfolio2: "The system answers questions about my background, projects, and skills, and allows direct contact via secure email. Integrated a recruiter tool that analyzes any job description and reports my compatibility percentage, highlighting matched skills and experience",
+    caption: "Fine-tuned several Vision Language Models and optimized pipelines for an AI competition.",
+    face: "MT-CNN based Face Recognition application. Published an article about it on Medium.",
+    gesture: "Machine Learning Course Term Project using MediaPipe and custom algorithms to detect different gestures."
+  }
+    },
+    
+    // Skills Section
+    skills: {
+      title: "Technical Skills",
+      computerVision: "Computer Vision",
+      nlp: "Natural Language Processing",
+      dataAnalysis: "Data Analysis & Visualization",
+      softwareEngineering: "Software Engineering"
+    },
+    
+    // Awards Section
+    awards: {
+      title: "Awards & Achievements",
+      descriptions: {
+    teknofest: "Selected among 200+ teams to develop an LLM-based project within 48 hours at the T3 AI Hackathon.",
+    eestech: "Created sentimental analysis solution in an hackathon within 4 hours. Achieved 2nd Place.",
+    obss: "Ranked 1st among university participants in an algorithm-based problem-solving competition."
+  }
+    },
+    
+    // References Section
+    references: {
+      title: "References"
+    },
+    
+    // Blog Section
+    blog: {
+      title: "Latest Articles",
+      minRead: "min read",
+      loadError: "Could not load blog posts 😔"
+    },
+    
+    // Contact Section
+    contact: {
+      title: "Get In Touch",
+      description1: "I'm always interested in hearing about new opportunities and collaborations in AI and machine learning.",
+      description2: "You can also reach me via the AI Assistant in the bottom right corner of this page.",
+      mailMe: "Mail me",
+      linkedinProfile: "LinkedIn Profile",
+      githubProfile: "GitHub Profile"
+    },
+    
+    // Chatbot
+    chatbot: {
+      tooltip: "Chat with AI Assistant",
+      title: "AI Portfolio Assistant",
+      loading: "Loading AI Assistant...",
+      initializing: "Initializing AI Assistant...",
+      error: "Unable to load the chatbot. It might be asleep or experiencing issues. Please try again later.",
+      tryMe: "Ask the AI Assistant! 💬"
+    },
+    
+    // Footer
+    footer: {
+      lastUpdated: "Last Updated: June 2025"
+    
+    }
+  },
+  
+  tr: {
+    // Navigation
+    nav: {
+      home: "Ana Sayfa",
+      about: "Hakkımda",
+      experience: "Deneyim",
+      projects: "Projeler",
+      skills: "Yetenekler",
+      awards: "Ödüller",
+      references: "Referanslar",
+      blog: "Blog",
+      contact: "İletişim"
+    },
+    
+    // Hero Section
+    hero: {
+      greeting: "Selam, ben",
+      title: "Jr. Yapay Zeka Mühendisi",
+      description: "Büyük Dil Modelleri ve Bilgisayarlı Görü Uzmanı",
+      downloadCV: "CV İndir"
+    },
+    
+    // About Section
+    about: {
+      title: "Hakkımda",
+      text1: "Teknik uzmanlığı pozitif ve ilgi çekici bir takım ruhuyla birleştirmesiyle tanınan biri olarak, yapay zeka ve yazılım geliştirme alanında, özellikle büyük dil modelleri (LLM'ler) ve bilgisayarlı görü üzerine odaklanarak çalışıyorum.",
+      text2: "Özgün fikirler üretmeyi ve bunları en pratik ve etkili şekilde hayata geçirmeyi seviyorum. İşbirliğinin başarıyı artırdığına inanıyorum ve katkıda bulunduğum her projede hem performansı hem de takım moralini yükseltmeye çalışıyorum.",
+      location: "Eskişehir, Türkiye",
+      university: "Eskişehir Teknik Üniversitesi"
+    },
+    
+    // Experience Section
+    experience: {
+      title: "Deneyim & Eğitim",
+      aiEngineerIntern: "Yapay Zeka Mühendisi Stajyeri",
+      softwareEngineerIntern: "Yazılım Mühendisi Stajyeri",
+      computerVisionIntern: "Bilgisayarlı Görü Stajyeri",
+      bachelor: "Mühendislik Lisansı",
+      exchange: "Değişim Dönemi",
+      transferred: "Yatay Geçiş Öğrencisi",
+      graduatedWith: "Mezuniyet ortalaması",
+      transferredAfter: "1. yıldan sonra yatay geçiş, ortalama",
+      descriptions: {
+        arena1: "Druid AI adlı düşük kodlu sohbet AI platformunu kullanarak Türkiye ve yurt dışındaki müşteriler için kurumsal düzeyde chatbotlar geliştiriyorum ve bakımını yapıyorum. Özelleştirilmiş chatbot çözümleri oluşturmak, konsept kanıtları (PoC'ler) sunmak ve müşteri geri bildirimlerine dayalı olarak sürekli destek ve iterasyon sağlamaktan sorumluyum.",
+        arena2: "Paralel olarak, LLaMA, GPT-4, GPT-4o ve GPT-4 Vision tarafından desteklenen gelişmiş çözümler oluşturuyorum. Odak noktam, multimodal anlama ve LLM güdümlü iş akışlarını konuşma sistemlerine entegre etmek.",
+        tai1: "Çok disiplinli bir mühendislik ortamında ölçeklenebilir ve sürdürülebilir yazılım çözümlerine odaklanarak çeşitli dahili modüller için backend geliştirmeye katkıda bulundum.",
+        tai2: "Yaklaşan yurt dışı eğitim programım nedeniyle stajdan erken ayrılmak zorunda kalsam da, bu deneyim kurumsal yazılım geliştirme uygulamaları ve büyük ölçekli sistem entegrasyonu konusunda değerli içgörüler sağladı.",
+        visea1: "PyTorch ve TensorFlow kullanarak derin öğrenme tabanlı sınıflandırma ve segmentasyon uygulamaları geliştirdim. ResNet, U-Net, MobileNet, EfficientNet ve VGG dahil olmak üzere çeşitli mimarilerle çalıştım ve bunları gerçek dünya bilgisayarlı görü problemlerini çözmek için uyarladım.",
+        visea2: "Veri ön işlemeden model değerlendirmeye kadar tam pipeline'a katkıda bulundum, farklı kullanım durumları için performansı optimize etmek amacıyla mimari seçimi ve ince ayar stratejileri ile deneyler yaptım.",
+        exchange: "Uluslararası bir ortamda AI odaklı dersler aldım. Teknik bilgimi derinleştirmek için MSc öğrencileriyle birlikte Yüksek Lisans düzeyinde bir Bilgisayarlı Görü dersine gönüllü olarak katıldım."
+      }
+    },
+    
+    // Projects Section
+    projects: {
+      title: "Öne Çıkan Projeler",
+      socialMediaAnalysis: "Deprem Mağduru Raporları için Sosyal Medya Analizi",
+      gendiary: "Gendiary: Yeni Nesil Sosyal Medya",
+      portfolioBot: "Ajan Bazlı Portfolyo Botu",
+      imageCaptioning: "Görüntü Altyazılama Projesi",
+      faceRecognition: "Yüz Tanıma Uygulaması",
+      gestureControl: "El Hareketi Tanıma ile Medya Kontrolü",
+      descriptions: {
+        social1: "Sosyal medyadan LLM tabanlı bilgi çıkarımını drone tabanlı görsel doğrulama ile birleştiren multimodal bir AI sistemi geliştirdim.",
+        social2: "Gerçek zamanlı afet müdahalesini desteklemek için acil ihtiyaçları, konumları ve yapısal hasarları belirlemede yüksek doğruluk elde ettim.",
+        gendiary: "Stable Diffusion ve PyTorch kullanarak kullanıcı fotoğraflarından kişiselleştirilmiş, bağlama duyarlı görüntüler üreten, dinamik prompt yönetimi ve GPU optimizasyonu ile Flask REST API üzerinden sunulan AI destekli bir günlük uygulaması geliştirdim.",
+        portfolio1: "Google Gemini ve RAG kullanarak, portfolyo web sitemde tamamen işlevsel olan AI destekli bir portfolyo chatbotu geliştirdim.",
+        portfolio2: "Sistem, geçmişim, projelerim ve becerilerim hakkındaki soruları yanıtlıyor ve güvenli e-posta yoluyla doğrudan iletişime izin veriyor. Herhangi bir iş tanımını analiz eden ve eşleşen beceri ve deneyimleri vurgulayarak uyumluluk yüzdemi raporlayan bir işe alım aracı entegre ettim.",
+        caption: "Bir AI yarışması için birkaç Vision Language Modelini ince ayarladım ve pipeline'ları optimize ettim.",
+        face: "MT-CNN tabanlı Yüz Tanıma uygulaması. Bununla ilgili Medium'da bir makale yayınladım.",
+        gesture: "MediaPipe ve özel algoritmalar kullanarak farklı hareketleri algılayan Makine Öğrenmesi Dersi Dönem Projesi."
+      }
+    },
+    
+    // Skills Section
+    skills: {
+      title: "Teknik Yetenekler",
+      computerVision: "Bilgisayarlı Görü",
+      nlp: "Doğal Dil İşleme",
+      dataAnalysis: "Veri Analizi & Görselleştirme",
+      softwareEngineering: "Yazılım Mühendisliği"
+    },
+    
+    // Awards Section
+    awards: {
+      title: "Ödüller & Başarılar",
+      descriptions: {
+        teknofest: "T3 AI Hackathon'unda 48 saat içinde LLM tabanlı bir proje geliştirmek için 200'den fazla takım arasından seçildim.",
+        eestech: "4 saat içinde bir hackathon'da duygu analizi çözümü oluşturdum. 2. sırayı elde ettim.",
+        obss: "Algoritma tabanlı problem çözme yarışmasında üniversite katılımcıları arasında 1. sırada yer aldım."
+      }
+    }, // <-- DÜZELTME 1: awards nesnesi burada kapatıldı.
+    
+    // References Section
+    references: {
+      title: "Referanslar"
+    },
+    
+    // Blog Section
+    blog: {
+      title: "Son Yazılar",
+      minRead: "dk okuma",
+      loadError: "Blog yazıları yüklenemedi 😔"
+    },
+    
+    // Contact Section
+    contact: {
+      title: "İletişime Geç",
+      description1: "Yapay zeka ve makine öğrenmesi alanındaki yeni fırsatlar ve işbirlikleri hakkında her zaman konuşmaya açığım.",
+      description2: "Ayrıca sayfanın sağ alt köşesindeki Yapay Zeka Asistanı aracılığıyla da bana ulaşabilirsiniz.",
+      mailMe: "E-posta gönder",
+      linkedinProfile: "LinkedIn Profili",
+      githubProfile: "GitHub Profili"
+    },
+    
+    // Chatbot
+    chatbot: {
+      tooltip: "AI Asistanı ile Sohbet Et",
+      title: "AI Portfolyo Asistanı",
+      loading: "AI Asistanı yükleniyor...",
+      initializing: "AI Asistanı başlatılıyor...",
+      error: "Chatbot yüklenemedi. Uyuyor veya sorun yaşıyor olabilir. Lütfen daha sonra tekrar deneyin.",
+      tryMe: "AI Asistanına sor! 💬"
+    },
+    
+    // Footer
+    footer: {
+      lastUpdated: "Son Güncelleme: Haziran 2025"
+    }
+  }
+};
 // ===== DOM Cache =====
 const DOM = {
   init() {
@@ -25,6 +289,7 @@ const DOM = {
     this.profileImage = document.querySelector(".profile-image");
     this.chatbotButton = document.getElementById("chatbotButton");
     this.themeToggle = document.getElementById("themeToggle");
+    this.languageToggle = document.getElementById("languageToggle");
     return this;
   }
 };
@@ -270,7 +535,141 @@ class ThemeManager {
   }
 }
 
-// ===== Streamlit Chatbot Manager =====
+// ===== Language Manager =====
+class LanguageManager {
+  constructor() {
+    this.currentLanguage = localStorage.getItem('language') || 'en';
+    this.init();
+  }
+
+  init() {
+    const languageToggle = document.getElementById('languageToggle');
+    if (languageToggle) {
+      languageToggle.setAttribute('data-current', this.currentLanguage);
+      
+      languageToggle.addEventListener('click', () => {
+        this.toggleLanguage();
+      });
+    }
+    
+    // Apply initial language
+    this.applyTranslations();
+  }
+
+  toggleLanguage() {
+    this.currentLanguage = this.currentLanguage === 'en' ? 'tr' : 'en';
+    localStorage.setItem('language', this.currentLanguage);
+    
+    const languageToggle = document.getElementById('languageToggle');
+    if (languageToggle) {
+      languageToggle.setAttribute('data-current', this.currentLanguage);
+    }
+    
+    this.applyTranslations();
+    
+    // Dispatch event for other components
+    window.dispatchEvent(new CustomEvent('languageChanged', { 
+      detail: { language: this.currentLanguage } 
+    }));
+  }
+
+  applyTranslations() {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translation = this.getTranslation(key);
+      if (translation) {
+        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+          element.placeholder = translation;
+        } else {
+          element.textContent = translation;
+        }
+      }
+    });
+    
+    // Update specific sections that need special handling
+    this.updateDynamicContent();
+  }
+
+  getTranslation(key) {
+    const keys = key.split('.');
+    let translation = translations[this.currentLanguage];
+    
+    for (const k of keys) {
+      if (translation && translation[k]) {
+        translation = translation[k];
+      } else {
+        return null;
+      }
+    }
+    
+    return translation;
+  }
+
+updateDynamicContent() {
+    // Update page title
+    document.title = this.currentLanguage === 'en' 
+      ? 'Selman Dedeakayoğulları - AI Engineer Portfolio'
+      : 'Selman Dedeakayoğulları - Yapay Zeka Mühendisi Portfolyosu';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.content = this.currentLanguage === 'en'
+        ? 'Jr. AI Engineer specializing in Computer Vision and Large Language Models. Portfolio showcasing projects in ML, NLP, and software development.'
+        : 'Bilgisayarlı Görü ve Büyük Dil Modelleri uzmanı Jr. Yapay Zeka Mühendisi. ML, NLP ve yazılım geliştirme projelerini sergileyen portfolyo.';
+    }
+    
+    // Update experience descriptions
+    const experienceDescs = [
+        { selector: '.experience-desc-1', key: 'experience.descriptions.arena1' },
+        { selector: '.experience-desc-2', key: 'experience.descriptions.arena2' },
+        { selector: '.experience-desc-3', key: 'experience.descriptions.tai1' },
+        { selector: '.experience-desc-4', key: 'experience.descriptions.tai2' },
+        { selector: '.experience-desc-5', key: 'experience.descriptions.visea1' },
+        { selector: '.experience-desc-6', key: 'experience.descriptions.visea2' },
+        { selector: '.experience-desc-7', key: 'experience.descriptions.exchange' }
+    ];
+    
+    // Update project descriptions
+    const projectDescs = [
+        { selector: '.project-desc-1', key: 'projects.descriptions.social1' },
+        { selector: '.project-desc-2', key: 'projects.descriptions.social2' },
+        { selector: '.project-desc-3', key: 'projects.descriptions.gendiary' },
+        { selector: '.project-desc-4', key: 'projects.descriptions.portfolio1' },
+        { selector: '.project-desc-5', key: 'projects.descriptions.portfolio2' },
+        { selector: '.project-desc-6', key: 'projects.descriptions.caption' },
+        { selector: '.project-desc-7', key: 'projects.descriptions.face' },
+        { selector: '.project-desc-8', key: 'projects.descriptions.gesture' }
+    ];
+    
+    // Update award descriptions
+    const awardDescs = [
+        { selector: '.award-desc-1', key: 'awards.descriptions.teknofest' },
+        { selector: '.award-desc-2', key: 'awards.descriptions.eestech' },
+        { selector: '.award-desc-3', key: 'awards.descriptions.obss' }
+    ];
+    
+    [...experienceDescs, ...projectDescs, ...awardDescs].forEach(({ selector, key }) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            const translation = this.getTranslation(key);
+            if (translation) {
+                element.textContent = translation;
+            }
+        }
+    });
+    
+    // Update chatbot content if loaded
+    const chatbotLoader = document.querySelector('.chatbot-loading p');
+    if (chatbotLoader) {
+        chatbotLoader.textContent = this.getTranslation('chatbot.loading');
+    }
+}
+  getLanguage(){
+    return this.currentLanguage;
+  };}
+
 // ===== Streamlit Chatbot Manager =====
 class StreamlitChatbotManager {
   constructor() {
@@ -576,15 +975,21 @@ close() {
   showTryMeNotification() {
     if (this.tryMeNotification || this.isOpen) return;
 
+    const languageManager = window.app?.managers?.language;
+    const tryMeText = languageManager ? 
+        languageManager.getTranslation('chatbot.tryMe') : 
+        'Ask the AI Assistant! 💬';
+
     this.tryMeNotification = document.createElement("div");
     this.tryMeNotification.className = "chatbot-try-me-notification";
     this.tryMeNotification.innerHTML = `
-            <div class="try-me-content">
-                <span class="try-me-text">Ask the AI Assistant! 💬</span>
-                <button class="try-me-close" aria-label="Close notification">×</button>
-            </div>
-            <div class="try-me-arrow"></div>
-        `;
+        <div class="try-me-content">
+            <span class="try-me-text" data-i18n="chatbot.tryMe">${tryMeText}</span>
+            <button class="try-me-close" aria-label="Close notification">×</button>
+        </div>
+        <div class="try-me-arrow"></div>
+    `;
+
 
     document.body.appendChild(this.tryMeNotification);
 
@@ -669,7 +1074,7 @@ class App {
     this.managers.animation = new AnimationManager();
     this.managers.theme = new ThemeManager();
     this.managers.chatbot = new StreamlitChatbotManager();
-
+    this.managers.language = new LanguageManager();
     // Setup global scroll handler
     this.setupScrollHandler();
 
@@ -732,4 +1137,5 @@ class App {
 document.addEventListener("DOMContentLoaded", () => {
   const app = new App();
   app.init();
+  window.app = app;
 });

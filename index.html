@@ -26,8 +26,6 @@
         })();
     </script>
     
-
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,100 +39,103 @@
 </head>
 <body>
     <!-- Navigation -->
-    <!-- Update the navigation bar to include theme toggle -->
-<nav class="navbar">
-    <div class="container">
-        <div class="nav-brand">
-            <a href="#home">SD</a>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">SD</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+                <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+                <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+                <a href="#awards" class="nav-link" data-i18n="nav.awards">Awards</a>
+                <a href="#references" class="nav-link" data-i18n="nav.references">References</a>
+                <a href="#blog" class="nav-link" data-i18n="nav.blog">Blog</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+            </div>
+            <!-- Language Toggle -->
+            <div class="language-toggle" id="languageToggle">
+                <span class="lang-option" data-lang="en">EN</span>
+                <span class="lang-option" data-lang="tr">TR</span>
+                <div class="lang-indicator"></div>
+            </div>
+            <!-- Theme Toggle -->
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+                <div class="toggle-ball"></div>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <!-- Update nav-menu to include References -->
-<div class="nav-menu" id="navMenu">
-    <a href="#home" class="nav-link">Home</a>
-    <a href="#about" class="nav-link">About</a>
-    <a href="#experience" class="nav-link">Experience</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#skills" class="nav-link">Skills</a>
-  <a href="#awards" class="nav-link">Awards</a>
-    <a href="#references" class="nav-link">References</a>
-    <a href="#blog" class="nav-link">Blog</a>
-    <a href="#contact" class="nav-link">Contact</a>
-</div>
-        <!-- Theme Toggle -->
-        <div class="theme-toggle" id="themeToggle">
-            <i class="fas fa-sun sun-icon"></i>
-            <i class="fas fa-moon moon-icon"></i>
-            <div class="toggle-ball"></div>
-        </div>
-        <div class="nav-toggle" id="navToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Hero Section -->
-    <!-- Update the Hero Section to include profile image -->
-<!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="profile-image-wrapper">
-                <img src="css/assets/profile.png" alt="Selman Dedeakayoğulları" class="profile-image">
-                <div class="profile-image-border"></div>
-            </div>
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Selman Dedeakayoğulları</span>
-                </h1>
-                <h2 class="hero-subtitle">Jr. AI Engineer</h2>
-                <p class="hero-description">
-                    Specializing in Large Language Models and Computer Vision
-                </p>
-                <div class="hero-buttons">
-                    <a href="css/assets/selman-cv.pdf" download="Selman_Dedeakayogullari_CV.pdf" class="btn btn-download">
-                        <i class="fas fa-download"></i> Download CV
-                    </a>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image-wrapper">
+                    <img src="css/assets/profile.png" alt="Selman Dedeakayoğulları" class="profile-image">
+                    <div class="profile-image-border"></div>
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/SelmanDedeakay" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/selmandedeakayoğulları" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:selmandedeakayogullari@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span data-i18n="hero.greeting">Hi, I'm</span> <span class="gradient-text">Selman Dedeakayoğulları</span>
+                    </h1>
+                    <h2 class="hero-subtitle" data-i18n="hero.title">Jr. AI Engineer</h2>
+                    <p class="hero-description" data-i18n="hero.description">
+                        Specializing in Large Language Models and Computer Vision
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="css/assets/selman-cv.pdf" download="Selman_Dedeakayogullari_CV.pdf" class="btn btn-download">
+                            <i class="fas fa-download"></i> <span data-i18n="hero.downloadCV">Download CV</span>
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/SelmanDedeakay" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/selmandedeakayoğulları" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:selmandedeakayogullari@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="hero-background">
-        <div class="gradient-bg"></div>
-    </div>
-</section>
+        <div class="hero-background">
+            <div class="gradient-bg"></div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
+                    <p data-i18n="about.text1">
                         Known for combining technical expertise with a positive and engaging team spirit, I work in the field of artificial intelligence and software development, particularly focusing on large language models (LLMs) and computer vision.
                     </p>
-                    <p>
+                    <p data-i18n="about.text2">
                         I enjoy generating original ideas and implementing them in the most practical and effective way. I believe that collaboration amplifies success, and I always strive to elevate both performance and team morale in every project I contribute to.
                     </p>
                     <div class="about-info">
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Eskişehir, Türkiye</span>
+                            <span data-i18n="about.location">Eskişehir, Türkiye</span>
                         </div>
                         
                         <div class="info-item">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>Eskişehir Technical University</span>
+                            <span data-i18n="about.university">Eskişehir Technical University</span>
                         </div>
                     </div>
                 </div>
@@ -145,59 +146,58 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Experience & Education</h2>
+            <h2 class="section-title" data-i18n="experience.title">Experience & Education</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">Dec 2023 – March 2025</div>
                     <div class="timeline-content">
-                        <h3>AI Engineer Intern</h3>
+                        <h3 data-i18n="experience.aiEngineerIntern">AI Engineer Intern</h3>
                         <h4>Arena</h4>
-                        <p>Developing and maintaining enterprise-grade chatbots for clients in Turkey and abroad using Druid AI, a low-code conversational AI platform. Responsible for building tailored chatbot solutions, delivering proof-of-concepts (PoCs), and ensuring ongoing support and iteration based on client feedback.</p>
-<br><p>In parallel, creating advanced solutions powered by LLaMA, GPT-4, GPT-4o, and GPT-4 Vision, with a focus on integrating multimodal understanding and LLM-driven workflows into conversational systems.</p>
+                        <p class="experience-desc-1">Developing and maintaining enterprise-grade chatbots for clients in Turkey and abroad using Druid AI, a low-code conversational AI platform. Responsible for building tailored chatbot solutions, delivering proof-of-concepts (PoCs), and ensuring ongoing support and iteration based on client feedback.</p>
+                        <br><p class="experience-desc-2">In parallel, creating advanced solutions powered by LLaMA, GPT-4, GPT-4o, and GPT-4 Vision, with a focus on integrating multimodal understanding and LLM-driven workflows into conversational systems.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">Nov 2022 – Jan 2023</div>
                     <div class="timeline-content">
-                        <h3>Software Engineering Intern</h3>
+                        <h3 data-i18n="experience.softwareEngineerIntern">Software Engineering Intern</h3>
                         <h4>Turkish Aerospace Industries</h4>
-                        <p>Contributed to backend development for various internal modules, focusing on scalable and maintainable software solutions within a multidisciplinary engineering environment.</p>
-<br> <p>Although I had to leave the internship early due to my upcoming study abroad program, the experience provided valuable insight into corporate software development practices and large-scale system integration.</p>
+                        <p class="experience-desc-3">Contributed to backend development for various internal modules, focusing on scalable and maintainable software solutions within a multidisciplinary engineering environment.</p>
+                        <br><p class="experience-desc-4">Although I had to leave the internship early due to my upcoming study abroad program, the experience provided valuable insight into corporate software development practices and large-scale system integration.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">Jul 2022 – Aug 2022</div>
                     <div class="timeline-content">
-                        <h3>Computer Vision Intern</h3>
+                        <h3 data-i18n="experience.computerVisionIntern">Computer Vision Intern</h3>
                         <h4>Visea Innovative</h4>
-                        <p>Developed deep learning-based classification and segmentation applications using PyTorch and TensorFlow. Worked with various architectures including ResNet, U-Net, MobileNet, EfficientNet, and VGG, adapting them to solve real-world computer vision problems.</p>
-<br><p>Contributed to the full pipeline from data preprocessing to model evaluation, experimenting with architecture selection and fine-tuning strategies to optimize performance for different use cases.</p>
+                        <p class="experience-desc-5">Developed deep learning-based classification and segmentation applications using PyTorch and TensorFlow. Worked with various architectures including ResNet, U-Net, MobileNet, EfficientNet, and VGG, adapting them to solve real-world computer vision problems.</p>
+                        <br><p class="experience-desc-6">Contributed to the full pipeline from data preprocessing to model evaluation, experimenting with architecture selection and fine-tuning strategies to optimize performance for different use cases.</p>
                     </div>
                 </div>
                 <div class="timeline-item education">
                     <div class="timeline-date">2021 – 2025</div>
                     <div class="timeline-content">
-                        <h3>Bachelor of Engineering</h3>
+                        <h3 data-i18n="experience.bachelor">Bachelor of Engineering</h3>
                         <h4>Eskişehir Technical University</h4>
-                        <p>Graduated with GPA 3.15/4.0</p>
+                        <p><span data-i18n="experience.graduatedWith">Graduated with GPA</span> 3.15/4.0</p>
                     </div>
                 </div>
                 <div class="timeline-item education">
                     <div class="timeline-date">2023</div>
                     <div class="timeline-content">
-                        <h3>Exchange Semester</h3>
+                        <h3 data-i18n="experience.exchange">Exchange Semester</h3>
                         <h4>Vorarlberg University of Applied Sciences</h4>
                         <p>Erasmus+ Study Programme - Dornbirn, Austria</p>
-
+                        <br><p class="experience-desc-7">Studied AI-focused courses in an international setting. Voluntarily attended a Master's level Computer Vision course alongside MSc students to deepen technical knowledge.</p>
                     </div>
                 </div>
                 <div class="timeline-item education">
                     <div class="timeline-date">2020-2021</div>
                     <div class="timeline-content">
-                        <h3>Transferred Student</h3>
+                        <h3 data-i18n="experience.transferred">Transferred Student</h3>
                         <h4>University of Turkish Aeronautical Association</h4>
-                        <p>Transferred after 1st year with GPA 3.43/4.0</p>
-
+                        <p><span data-i18n="experience.transferredAfter">Transferred after 1st year with GPA</span> 3.43/4.0</p>
                     </div>
                 </div>
             </div>
@@ -207,15 +207,15 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
                         <i class="fas fa-brain project-icon"></i>
-                        <h3>Social Media Analysis for Earthquake Victim Reports</h3>
+                        <h3 data-i18n="projects.socialMediaAnalysis">Social Media Analysis for Earthquake Victim Reports</h3>
                     </div>
-                    <p>Developed a multimodal AI system combining LLM-based information extraction from social media with drone-based visual verification. </p>
-<p>Achieved high accuracy in identifying urgent needs, locations, and structural damage to support real-time disaster response.</p>
+                    <p class="project-desc-1">Developed a multimodal AI system combining LLM-based information extraction from social media with drone-based visual verification.</p>
+                    <p class="project-desc-2">Achieved high accuracy in identifying urgent needs, locations, and structural damage to support real-time disaster response.</p>
                     <div class="project-tags">
                         <span class="tag">Large Language Models</span>
                         <span class="tag">NLP</span>
@@ -227,9 +227,9 @@
                 <div class="project-card">
                     <div class="project-header">
                         <i class="fas fa-images project-icon"></i>
-                        <h3>Gendiary: New-Gen Social Media</h3>
+                        <h3 data-i18n="projects.gendiary">Gendiary: New-Gen Social Media</h3>
                     </div>
-                    <p>Developed an AI-powered diary app that generates personalized, context-aware images from user photos using Stable Diffusion and PyTorch, delivered via a Flask REST API with dynamic prompt management and GPU optimization.</p>
+                    <p class="project-desc-3">Developed an AI-powered diary app that generates personalized, context-aware images from user photos using Stable Diffusion and PyTorch, delivered via a Flask REST API with dynamic prompt management and GPU optimization.</p>
                     <div class="project-tags">
                         <span class="tag">Stable Diffusion</span>
                         <span class="tag">Computer Vision</span>
@@ -237,26 +237,27 @@
                         <span class="tag">API Development</span>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-header">
                         <i class="fas fa-robot project-icon"></i>
-                        <h3>Agentic Portfolio Bot</h3>
+                        <h3 data-i18n="projects.portfolioBot">Agentic Portfolio Bot</h3>
                     </div>
-                    <p>Developed an AI-powered portfolio chatbot using Google Gemini and RAG, which is fully functional in my portfolio website live. </p>
-<p>The system answers questions about my background, projects, and skills, and allows direct contact via secure email. Integrated a recruiter 
-tool that analyzes any job description and reports my compatibility percentage, highlighting matched skills and experience</p>
+                    <p class="project-desc-4">Developed an AI-powered portfolio chatbot using Google Gemini and RAG, which is fully functional in my portfolio website live.</p>
+                    <p class="project-desc-5">The system answers questions about my background, projects, and skills, and allows direct contact via secure email. Integrated a recruiter tool that analyzes any job description and reports my compatibility percentage, highlighting matched skills and experience</p>
                     <div class="project-tags">
                         <span class="tag">Gemini API</span>
                         <span class="tag">Agentic AI</span>
                         <span class="tag">RAG</span>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-header">
                         <i class="fas fa-camera project-icon"></i>
-                        <h3>Image Captioning Project</h3>
+                        <h3 data-i18n="projects.imageCaptioning">Image Captioning Project</h3>
                     </div>
-                    <p>Fine-tuned several Vision Language Models and optimized pipelines for an AI competition.</p>
+                    <p class="project-desc-6">Fine-tuned several Vision Language Models and optimized pipelines for an AI competition.</p>
                     <div class="project-tags">
                         <span class="tag">Vision Language Models</span>
                         <span class="tag">Fine-tuning</span>
@@ -267,9 +268,9 @@ tool that analyzes any job description and reports my compatibility percentage, 
                 <div class="project-card">
                     <div class="project-header">
                         <i class="fas fa-user-check project-icon"></i>
-                        <h3>Face Recognition Application</h3>
+                        <h3 data-i18n="projects.faceRecognition">Face Recognition Application</h3>
                     </div>
-                    <p>MT-CNN based Face Recognition application. Published an article about it on Medium.</p>
+                    <p class="project-desc-7">MT-CNN based Face Recognition application. Published an article about it on Medium.</p>
                     <div class="project-tags">
                         <span class="tag">PyTorch</span>
                         <span class="tag">Computer Vision</span>
@@ -280,28 +281,26 @@ tool that analyzes any job description and reports my compatibility percentage, 
                 <div class="project-card">
                     <div class="project-header">
                         <i class="fas fa-hand-paper project-icon"></i>
-                        <h3>Media Control with Gesture Recognition</h3>
+                        <h3 data-i18n="projects.gestureControl">Media Control with Gesture Recognition</h3>
                     </div>
-                    <p>Machine Learning Course Term Project using MediaPipe and custom algorithms to detect different gestures.</p>
+                    <p class="project-desc-8">Machine Learning Course Term Project using MediaPipe and custom algorithms to detect different gestures.</p>
                     <div class="project-tags">
                         <span class="tag">Scikit-learn</span>
                         <span class="tag">MediaPipe</span>
                         <span class="tag">ML</span>
                     </div>
                 </div>
-                
-                
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-<section id="skills" class="skills">
+    <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title" data-i18n="skills.title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-eye"></i> Computer Vision</h3>
+                    <h3><i class="fas fa-eye"></i> <span data-i18n="skills.computerVision">Computer Vision</span></h3>
                     <div class="skill-list">
                         <span class="skill-item">OpenCV</span>
                         <span class="skill-item">PyTorch</span>
@@ -317,12 +316,11 @@ tool that analyzes any job description and reports my compatibility percentage, 
                         <span class="skill-item">Image Segmentation</span>
                         <span class="skill-item">Object Detection</span>
                         <span class="skill-item">Image Captioning</span>
-
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fas fa-comments"></i> Natural Language Processing</h3>
+                    <h3><i class="fas fa-comments"></i> <span data-i18n="skills.nlp">Natural Language Processing</span></h3>
                     <div class="skill-list">
                         <span class="skill-item">HuggingFace Transformers</span>
                         <span class="skill-item">Langchain</span>
@@ -339,7 +337,7 @@ tool that analyzes any job description and reports my compatibility percentage, 
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-bar"></i> Data Analysis & Visualization</h3>
+                    <h3><i class="fas fa-chart-bar"></i> <span data-i18n="skills.dataAnalysis">Data Analysis & Visualization</span></h3>
                     <div class="skill-list">
                         <span class="skill-item">Matplotlib</span>
                         <span class="skill-item">Numpy</span>
@@ -351,7 +349,7 @@ tool that analyzes any job description and reports my compatibility percentage, 
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Software Engineering</h3>
+                    <h3><i class="fas fa-code"></i> <span data-i18n="skills.softwareEngineering">Software Engineering</span></h3>
                     <div class="skill-list">
                         <span class="skill-item">Python</span>
                         <span class="skill-item">Java</span>
@@ -369,256 +367,257 @@ tool that analyzes any job description and reports my compatibility percentage, 
             </div>
         </div>
     </section>
-<!-- Awards Section -->
-<section id="awards" class="awards">
-    <div class="container">
-        <h2 class="section-title">Awards & Achievements</h2>
-        <div class="awards-grid">
-            <div class="award-card">
-                <div class="award-icon">
-                    <i class="fas fa-trophy"></i>
+
+    <!-- Awards Section -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2 class="section-title" data-i18n="awards.title">Awards & Achievements</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="award-content">
+                        <h3>TEKNOFEST T3 AI Hackathon 2024 Finalist</h3>
+                        <p class="award-organization">T3 (Türkiye Technology Team)</p>
+                        <p class="award-year">2024</p>
+                        <p class="award-description award-desc-1">
+                            Selected among 200+ teams to develop an LLM-based project within 48 hours at the T3 AI Hackathon.
+                        </p>
+                    </div>
                 </div>
-                <div class="award-content">
-                    <h3>TEKNOFEST T3 AI Hackathon 2024 Finalist</h3>
-                    <p class="award-organization">T3 (Türkiye Technology Team)</p>
-                    <p class="award-year">2024</p>
-                    <p class="award-description">
-                        Selected among 200+ teams to develop an LLM-based project within 48 hours at the T3 AI Hackathon.
-                    </p>
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="award-content">
+                        <h3>EESTech AI Solutions Challenge</h3>
+                        <p class="award-organization">EESTEC LC Eskişehir</p>
+                        <p class="award-year">2024</p>
+                        <p class="award-description award-desc-2">
+                            Created sentimental analysis solution in an hackathon within 4 hours. Achieved 2nd Place.
+                        </p>
+                    </div>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="award-content">
+                        <h3>OBSS Code Master 2022</h3>
+                        <p class="award-organization">OBSS</p>
+                        <p class="award-year">2022</p>
+                        <p class="award-description award-desc-3">
+                            Ranked 1st among university participants in an algorithm-based problem-solving competition.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="award-card">
-                <div class="award-icon">
-                    <i class="fas fa-award"></i>
-                </div>
-                <div class="award-content">
-                    <h3>EESTech AI Solutions Challenge</h3>
-                    <p class="award-organization">EESTEC LC Eskişehir</p>
-                    <p class="award-year">2024</p>
-                    <p class="award-description">
-                        Created sentimental analysis solution in an hackathon within 4 hours. Achieved 2nd Place.
-                    </p>
-                </div>
-            </div>
-            <div class="award-card">
-                <div class="award-icon">
-                    <i class="fas fa-medal"></i>
-                </div>
-                <div class="award-content">
-                    <h3>OBSS Code Master 2022</h3>
-                    <p class="award-organization">OBSS</p>
-                    <p class="award-year">2022</p>
-                    <p class="award-description">
-                        Ranked 1st among university participants in an algorithm-based problem-solving competition.
-                    </p>
-                </div>
-            </div>
-            
-            
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- References Section -->
-<section id="references" class="references">
-    <div class="container">
-        <h2 class="section-title">References</h2>
-
-
-        <div class="references-grid">
-            <div class="reference-card">
-                <div class="reference-image-wrapper">
-                    <img src="css/assets/abdullatif_baba.png" alt="Reference 1" class="reference-image">
-                    <div class="reference-overlay"></div>
+    <section id="references" class="references">
+        <div class="container">
+            <h2 class="section-title" data-i18n="references.title">References</h2>
+            <div class="references-grid">
+                <div class="reference-card">
+                    <div class="reference-image-wrapper">
+                        <img src="css/assets/abdullatif_baba.png" alt="Reference 1" class="reference-image">
+                        <div class="reference-overlay"></div>
+                    </div>
+                    <div class="reference-content"> 
+                        <h3>Dr. Abdullatif Baba</h3>
+                        <p class="reference-title">Assoc. Professor & Researcher</p>
+                        <p class="reference-org">Kuwait College of Science and Technology</p>
+                    </div>
                 </div>
-                <div class="reference-content"> 
-                    <h3>Dr. Abdullatif Baba</h3>
-                    <p class="reference-title">Assoc. Professor & Researcher</p>
-                    <p class="reference-org">Kuwait College of Science and Technology</p>
+                
+                <div class="reference-card">
+                    <div class="reference-image-wrapper">
+                        <img src="css/assets/sebastian_hegenbart.png" alt="Reference 2" class="reference-image">
+                        <div class="reference-overlay"></div>
+                    </div>
+                    <div class="reference-content">
+                        <h3>Dr. Sebastian Hegenbart</h3>
+                        <p class="reference-title">Senior Lecturer</p>
+                        <p class="reference-org">Fachhochschule Vorarlberg</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="reference-card">
-                <div class="reference-image-wrapper">
-                    <img src="css/assets/sebastian_hegenbart.png" alt="Reference 2" class="reference-image">
-                    <div class="reference-overlay"></div>
+                
+                <div class="reference-card">
+                    <div class="reference-image-wrapper">
+                        <img src="css/assets/alperen_enes_bayar.png" alt="Reference 3" class="reference-image">
+                        <div class="reference-overlay"></div>
+                    </div>
+                    <div class="reference-content">
+                        <h3>Alperen Enes Bayar</h3>
+                        <p class="reference-title">Senior AI Research Engineer</p>
+                        <p class="reference-org">TURKSAT</p>
+                    </div>
                 </div>
-                <div class="reference-content">
-                    <h3>Dr. Sebastian Hegenbart</h3>
-                    <p class="reference-title">Senior Lecturer</p>
-                    <p class="reference-org">Fachhochschule Vorarlberg</p>
+                <div class="reference-card">
+                    <div class="reference-image-wrapper">
+                        <img src="css/assets/sema_candemir.png" alt="Reference 4" class="reference-image">
+                        <div class="reference-overlay"></div>
+                    </div>
+                    <div class="reference-content">
+                        <h3>Dr. Sema Candemir</h3>
+                        <p class="reference-title">Asst. Professor</p>
+                        <p class="reference-org">Eskişehir Technical University</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="reference-card">
-                <div class="reference-image-wrapper">
-                    <img src="css/assets/alperen_enes_bayar.png" alt="Reference 3" class="reference-image">
-                    <div class="reference-overlay"></div>
-                </div>
-                <div class="reference-content">
-                    <h3>Alperen Enes Bayar</h3>
-                    <p class="reference-title">Senior AI Research Engineer</p>
-                    <p class="reference-org">TURKSAT</p>
-                </div>
-            </div>
-            <div class="reference-card">
-                <div class="reference-image-wrapper">
-                    <img src="css/assets/sema_candemir.png" alt="Reference 4" class="reference-image">
-                    <div class="reference-overlay"></div>
-                </div>
-                <div class="reference-content">
-                    <h3>Dr. Sema Candemir</h3>
-                    <p class="reference-title">Asst. Professor</p>
-                    <p class="reference-org">Eskişehir Technical University</p>
-                </div>
-            </div>
-            <div class="reference-card">
-                <div class="reference-image-wrapper">
-                    <img src="css/assets/mehmet_koc.png" alt="Reference 5" class="reference-image">
-                    <div class="reference-overlay"></div>
-                </div>
-                <div class="reference-content">
-                    <h3>Dr. Mehmet Koç</h3>
-                    <p class="reference-title">Assoc. Professor</p>
-                    <p class="reference-org">Eskişehir Technical University</p>
+                <div class="reference-card">
+                    <div class="reference-image-wrapper">
+                        <img src="css/assets/mehmet_koc.png" alt="Reference 5" class="reference-image">
+                        <div class="reference-overlay"></div>
+                    </div>
+                    <div class="reference-content">
+                        <h3>Dr. Mehmet Koç</h3>
+                        <p class="reference-title">Assoc. Professor</p>
+                        <p class="reference-org">Eskişehir Technical University</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Blog Section (boş önce) -->
-<section id="blog" class="blog">
-  <div class="container">
-    <h2 class="section-title">Latest Articles</h2>
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title" data-i18n="blog.title">Latest Articles</h2>
 
-    <!-- Skeleton’lar -->
-    <div class="blog-grid" id="blogGrid">
-      <div class="skeleton-card"></div><div class="skeleton-card"></div>
-      <div class="skeleton-card"></div><div class="skeleton-card"></div>
-      <div class="skeleton-card"></div><div class="skeleton-card"></div>
-    </div>
-  </div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', async () => {
-  const blogGrid = document.getElementById('blogGrid');
-  const FEED = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@SelmanDedeakayogullari';
-
-  try {
-    const { items } = await (await fetch(FEED)).json();
-
-    // ➊ Kategorisi olan ilk 3 yazı
-    const posts = items.filter(p => p.categories.length).slice(0, 3);
-
-    blogGrid.innerHTML = ''; // skeletonları sil
-
-    posts.forEach(p => {
-      /* Görsel */
-      let img = p.thumbnail ||
-        (new DOMParser().parseFromString(p.content, 'text/html')
-                        .querySelector('img')?.src) ||
-        'css/assets/blog/default.webp';
-      img = img.replace(/max\/\d+\//, 'max/1200/');
-
-      /* Excerpt */
-      const text = p.content.replace(/<[^>]+>/g, '')
-                            .replace(/\s+/g, ' ')
-                            .trim();
-
-      /* Okuma süresi (~200 wpm) */
-      const readMin = Math.max(1, Math.round(text.split(' ').length / 200));
-
-      /* Kart */
-      const card = document.createElement('article');
-      card.className = 'blog-card';
-      card.innerHTML = `
-        <a href="${p.link}" target="_blank" aria-label="${p.title}">
-          <figure class="blog-thumb">
-            <img src="${img}" alt="${p.title}" loading="lazy" decoding="async">
-          </figure>
-          <div class="blog-body">
-            <h3 class="blog-title">${p.title}</h3>
-            <p class="blog-excerpt">${text.slice(0, 160)}…</p>
-
-            <div class="blog-meta">
-              <time datetime="${p.pubDate}">
-                ${new Date(p.pubDate)
-                    .toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}
-              </time>
-              <span class="dot">•</span>
-              <span>${readMin} min read</span>
+            <!-- Skeleton'lar -->
+            <div class="blog-grid" id="blogGrid">
+                <div class="skeleton-card"></div><div class="skeleton-card"></div>
+                <div class="skeleton-card"></div><div class="skeleton-card"></div>
+                <div class="skeleton-card"></div><div class="skeleton-card"></div>
             </div>
-          </div>
-        </a>
-      `;
-      blogGrid.appendChild(card);
-    });
+        </div>
+    </section>
 
-  } catch (err) {
-    console.error(err);
-    blogGrid.innerHTML =
-      '<p style="text-align:center;color:var(--text-light)">Could not load blog posts 😔</p>';
-  }
-});
-</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const blogGrid = document.getElementById('blogGrid');
+        const FEED = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@SelmanDedeakayogullari';
+
+        try {
+            const { items } = await (await fetch(FEED)).json();
+
+            // ➊ Kategorisi olan ilk 3 yazı
+            const posts = items.filter(p => p.categories.length).slice(0, 3);
+            const dateLocale = document.documentElement.lang === 'tr' ? 'tr-TR' : 'en-US';
+            const dateOptions = {month:'short', day:'numeric', year:'numeric'};
+
+
+            blogGrid.innerHTML = ''; // skeletonları sil
+
+            posts.forEach(p => {
+                /* Görsel */
+                let img = p.thumbnail ||
+                    (new DOMParser().parseFromString(p.content, 'text/html')
+                                    .querySelector('img')?.src) ||
+                    'css/assets/blog/default.webp';
+                img = img.replace(/max\/\d+\//, 'max/1200/');
+
+                /* Excerpt */
+                const text = p.content.replace(/<[^>]+>/g, '')
+                                      .replace(/\s+/g, ' ')
+                                      .trim();
+
+                /* Okuma süresi (~200 wpm) */
+                const readMin = Math.max(1, Math.round(text.split(' ').length / 200));
+
+                /* Kart */
+                const card = document.createElement('article');
+                card.className = 'blog-card';
+                card.innerHTML = `
+                    <a href="${p.link}" target="_blank" aria-label="${p.title}">
+                        <figure class="blog-thumb">
+                            <img src="${img}" alt="${p.title}" loading="lazy" decoding="async">
+                        </figure>
+                        <div class="blog-body">
+                            <h3 class="blog-title">${p.title}</h3>
+                            <p class="blog-excerpt">${text.slice(0, 160)}…</p>
+
+                            <div class="blog-meta">
+                                <time datetime="${p.pubDate}">
+                                    ${new Date(p.pubDate).toLocaleDateString(dateLocale, dateOptions)}
+                                </time>
+                                <span class="dot">•</span>
+                                <span>${readMin} <span data-i18n="blog.minRead">min read</span></span>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                blogGrid.appendChild(card);
+            });
+
+        } catch (err) {
+            console.error(err);
+            blogGrid.innerHTML =
+                '<p style="text-align:center;color:var(--text-light)" data-i18n="blog.loadError">Could not load blog posts 😔</p>';
+        }
+    });
+    </script>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
             <div class="contact-content">
-                <p class="contact-description">
+                <p class="contact-description" data-i18n="contact.description1">
                     I'm always interested in hearing about new opportunities and collaborations in AI and machine learning.
                 </p>
-                <p class="contact-description">
+                <p class="contact-description" data-i18n="contact.description2">
                    You can also reach me via the AI Assistant in the bottom right corner of this page.
                 </p>
                 <div class="contact-info">
                     <a href="mailto:selmandedeakayogullari@gmail.com" class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>Mail me</span>
+                        <span data-i18n="contact.mailMe">Mail me</span>
                     </a>
 
                     <a href="https://linkedin.com/in/selmandedeakayoğulları" target="_blank" class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn Profile</span>
+                        <span data-i18n="contact.linkedinProfile">LinkedIn Profile</span>
                     </a>
                     <a href="https://github.com/SelmanDedeakay" target="_blank" class="contact-item">
                         <i class="fab fa-github"></i>
-                        <span>GitHub Profile</span>
+                        <span data-i18n="contact.githubProfile">GitHub Profile</span>
                     </a>
-                    
                 </div>
             </div>
         </div>
     </section>
-<!-- Chatbot Button and Modal -->
-<div class="chatbot-container">
-    <button class="chatbot-button" id="chatbotButton" aria-label="Open AI Assistant">
-        <i class="fas fa-robot"></i>
-        <span class="chatbot-tooltip">Chat with AI Assistant</span>
-    </button>
-    
-    <div class="chatbot-modal" id="chatbotModal">
-        <div class="chatbot-header">
-            <h3>AI Portfolio Assistant</h3>
-            <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="chatbot-content" id="chatbotContent">
-            <div class="chatbot-loading">
-                <div class="loading-spinner"></div>
-                <p>Loading AI Assistant...</p>
+
+    <!-- Chatbot Button and Modal -->
+    <div class="chatbot-container">
+        <button class="chatbot-button" id="chatbotButton" aria-label="Open AI Assistant">
+            <i class="fas fa-robot"></i>
+            <span class="chatbot-tooltip" data-i18n="chatbot.tooltip">Chat with AI Assistant</span>
+        </button>
+        
+        <div class="chatbot-modal" id="chatbotModal">
+            <div class="chatbot-header">
+                <h3 data-i18n="chatbot.title">AI Portfolio Assistant</h3>
+                <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-content" id="chatbotContent">
+                <div class="chatbot-loading">
+                    <div class="loading-spinner"></div>
+                    <p data-i18n="chatbot.loading">Loading AI Assistant...</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container"> 
-            <p>&copy; Selman Dedeakayoğulları | Last Updated: June 2025</p>
+            <p>&copy; Selman Dedeakayoğulları | <span data-i18n="footer.lastUpdated">Last Updated: June 2025</span></p>
         </div>
     </footer>
 
