@@ -110,7 +110,8 @@ h6 {
 .nav-link {
   color: var(--text-primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 14px;
   transition: var(--transition);
   position: relative;
 }
@@ -2451,7 +2452,7 @@ body.theme-loaded {
 .hero-content {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 8rem;
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;
@@ -3304,17 +3305,85 @@ body.theme-loaded {
   font-size: 1.2rem;
   line-height: 0;
 }
+.blog-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  padding: 0 1rem; /* Yan boşluklar */
+}
+
+/* Mobil için özel ayarlar */
+@media (max-width: 768px) {
+  .blog {
+    padding: 4rem 0; /* Üst-alt padding azalt */
+  }
+  
+  .blog-grid {
+    grid-template-columns: 1fr; /* Tek sütun */
+    gap: 1.25rem;
+    padding: 0 0.5rem; /* Daha az yan boşluk */
+    max-width: 100%;
+    overflow-x: hidden; /* Yatay taşmayı engelle */
+  }
+  
+  .blog-card {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .blog-thumb {
+    height: 160px; /* Mobilde daha küçük resim */
+  }
+  
+  .blog-body {
+    padding: 1rem 1.25rem 1.2rem; /* Daha az padding */
+  }
+  
+  .blog-title {
+    font-size: 1rem; /* Daha küçük başlık */
+    line-height: 1.3;
+  }
+  
+  .blog-excerpt {
+    font-size: 0.88rem; /* Daha küçük metin */
+    -webkit-line-clamp: 2; /* Daha az satır */
+  }
+}
+
+/* Çok küçük ekranlar için */
+@media (max-width: 480px) {
+  .blog-grid {
+    padding: 0 0.25rem;
+    gap: 1rem;
+  }
+  
+  .blog-card {
+    border-radius: 12px; /* Daha az border radius */
+  }
+  
+  .blog-thumb {
+    height: 140px;
+  }
+  
+  .blog-body {
+    padding: 0.875rem 1rem 1rem;
+    gap: 0.5rem;
+  }
+}
 .language-toggle {
   position: relative;
-  width: 65px;
+  width: 80px; /* Genişliği artır */
   height: 30px;
   background: var(--bg-tertiary);
   border-radius: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
-
-
+  right:0px;
+  justify-content: space-between; /* Bu satırı ekle */
+  padding: 0 5px; /* Padding'i azalt */
   transition: var(--transition);
   border: 2px solid var(--border-color);
 }
@@ -3324,7 +3393,7 @@ body.theme-loaded {
 }
 
 .lang-option {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-light);
   z-index: 3;
@@ -3332,24 +3401,27 @@ body.theme-loaded {
   user-select: none;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  padding: 2px 8px;
+
   border-radius: 10px;
   position: relative;
 }
 
 .lang-indicator {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 40px; /* Genişliği artır */
+  height: 26px; /* Yüksekliği azalt */
   background: var(--primary-color);
-  border-radius: 11px;
+  border-radius: 13px;
   transition: transform 0.3s ease;
-
+  left: 0px; /* Bu satırı ekle - sola kaydırır */
+  top: 0px;  /* Bu satırı da ekle - yukarı kaydırır */
+  right: 0px; /* Bu satırı ekle - sola kaydırır */
+  bottom: 0px;
   z-index: 2;
 }
 
 .language-toggle[data-current="tr"] .lang-indicator {
-  transform: translateX(32px);
+  transform: translateX(36px); /* Mesafeyi artır */
 }
 
 .language-toggle[data-current="en"] .lang-option[data-lang="en"],
@@ -3366,14 +3438,27 @@ body.theme-loaded {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
+
+
+.language-toggle[data-current="en"] .lang-option[data-lang="tr"]::before,
+.language-toggle[data-current="tr"] .lang-option[data-lang="en"]::before {
+  opacity: 0.5;
+  filter: grayscale(30%);
+}
+
+.language-toggle[data-current="en"] .lang-option[data-lang="en"]::before,
+.language-toggle[data-current="tr"] .lang-option[data-lang="tr"]::before {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
 /* Mobile düzeni */
 @media (max-width: 768px) {
   .navbar .container {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center; /* SD logosunu ortalar */
-
+    justify-content: center;
   }
 
   .nav-brand {
@@ -3388,24 +3473,24 @@ body.theme-loaded {
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    width: 55px;
+    width: 70px;
     height: 28px;
-    margin-right: 0;
+
   }
 
   .lang-indicator {
-    width: 27px;
-    height: 26px;
-
+    width: 35px;
+    height: 25px;
+    
   }
 
   .language-toggle[data-current="tr"] .lang-indicator {
-    transform: translateX(26px);
+    transform: translateX(32px);
   }
 
   .lang-option {
     font-size: 9px;
-    padding: 2px 7px;
+
   }
 
   .language-toggle:hover {
@@ -3418,12 +3503,34 @@ body.theme-loaded {
   .navbar .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Nav linkleri ortada tut */
+    position: relative;
   }
 
-  .nav-brand {
-    position: static;
-    transform: none;
+  /* Dil ve tema butonlarını sağ tarafa grup halinde yerleştir */
+  .language-toggle,
+  .theme-toggle {
+    position: absolute;
+    right: 20px; /* Sağ tarafa yerleştir */
+    top: 50%;
+    transform: translateY(-50%);
+  }  .nav-brand {
+    position: absolute;
+    left: 20px; /* Sol tarafa yerleştir */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .language-toggle {
+    right: 100px; /* Tema butonundan biraz uzakta */
+  }
+  
+  .theme-toggle {
+    right: 20px; /* En sağda */
+  }
+   body[data-lang="tr"] .nav-menu {
+    transform: translateX(-30px);
+    transition: transform 0.3s ease;
   }
 }
 
@@ -3449,4 +3556,37 @@ body.theme-loaded {
   .lang-indicator {
     transition: none;
   }
+}/* Bayrak emojilerini kaldır ve SVG background kullan */
+.lang-option[data-lang="en"]::before,
+.lang-option[data-lang="tr"]::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+}
+
+.lang-option[data-lang="en"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0 L30,30 M0,15 L60,15' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0 L30,30 M0,15 L60,15' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E");
+}
+
+.lang-option[data-lang="tr"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23E30A17'/%3E%3Ccircle cx='18' cy='15' r='6' fill='%23fff'/%3E%3Ccircle cx='20' cy='15' r='4.8' fill='%23E30A17'/%3E%3Cpath d='M26,11 L28,13 L31,12 L29,15 L31,18 L28,17 L26,19 L26,15 Z' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+/* Aktif olmayan bayrağı soluklaştır */
+.language-toggle[data-current="en"] .lang-option[data-lang="tr"]::before,
+.language-toggle[data-current="tr"] .lang-option[data-lang="en"]::before {
+  opacity: 0.5;
+  filter: grayscale(50%);
+}
+
+/* Aktif bayrağı belirginleştir */
+.language-toggle[data-current="en"] .lang-option[data-lang="en"]::before,
+.language-toggle[data-current="tr"] .lang-option[data-lang="tr"]::before {
+  opacity: 1;
+  filter: grayscale(0%);
 }
