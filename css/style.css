@@ -3641,4 +3641,56 @@ body.theme-loaded {
 .award-desc-3 {
   min-height: 1.2em;
   transition: opacity 0.15s ease-in-out;
+}/* Language transition effects - geliştirilmiş versiyon */
+.language-transition {
+  opacity: 0.3;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.language-fade-out {
+  opacity: 0 !important;
+  transition: opacity 0.15s ease-out !important;
+}
+
+.language-fade-in {
+  opacity: 1 !important;
+  transition: opacity 0.15s ease-in !important;
+}
+
+/* Tüm çevrilebilir elementler için temel transition */
+[data-i18n],
+.experience-desc-1, .experience-desc-2, .experience-desc-3,
+.experience-desc-4, .experience-desc-5, .experience-desc-6,
+.experience-desc-7, .project-desc-1, .project-desc-2,
+.project-desc-3, .project-desc-4, .project-desc-5,
+.project-desc-6, .project-desc-7, .project-desc-8,
+.award-desc-1, .award-desc-2, .award-desc-3 {
+  transition: opacity 0.15s ease-in-out;
+  min-height: 1.2em;
+}
+
+/* Language toggle loading state */
+.language-toggle.transitioning {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.language-toggle.transitioning::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -582,8 +582,7 @@ class ThemeManager {
   }
 }
 
-// ===== Language Manager =====
-// ===== Language Manager =====
+/// ===== Language Manager =====
 class LanguageManager {
   constructor() {
     this.currentLanguage = localStorage.getItem('language') || 'en';
@@ -611,14 +610,20 @@ class LanguageManager {
     if (this.isTransitioning) return;
     
     this.isTransitioning = true;
+    const languageToggle = document.getElementById('languageToggle');
     const previousLanguage = this.currentLanguage;
+    
+    // Add loading state
+    if (languageToggle) {
+      languageToggle.classList.add('transitioning');
+    }
+    
     this.currentLanguage = this.currentLanguage === 'en' ? 'tr' : 'en';
     
     try {
       // Update storage and toggle indicator
       localStorage.setItem('language', this.currentLanguage);
       
-      const languageToggle = document.getElementById('languageToggle');
       if (languageToggle) {
         languageToggle.setAttribute('data-current', this.currentLanguage);
       }
@@ -639,49 +644,87 @@ class LanguageManager {
       // Rollback on error
       this.currentLanguage = previousLanguage;
       localStorage.setItem('language', this.currentLanguage);
+      if (languageToggle) {
+        languageToggle.setAttribute('data-current', this.currentLanguage);
+      }
     } finally {
+      // Remove loading state
+      if (languageToggle) {
+        languageToggle.classList.remove('transitioning');
+      }
       this.isTransitioning = false;
     }
   }
 
   async applyTransitionsWithFade() {
-    const elements = document.querySelectorAll('[data-i18n]');
-    const dynamicElements = this.getDynamicElements();
-    const allElements = [...elements, ...dynamicElements];
+    // Tüm çevrilebilir elementleri topla
+    const allTranslatableElements = this.getAllTranslatableElements();
+    
+    console.log(`Transitioning ${allTranslatableElements.length} elements`); // Debug
     
     // Phase 1: Fade out all elements
-    allElements.forEach(element => {
-      if (element) {
+    allTranslatableElements.forEach(element => {
+      if (element && element.offsetParent !== null) { // Sadece görünür elementler
         element.classList.add('language-fade-out');
       }
     });
     
     // Wait for fade out to complete
-    await this.wait(150);
+    await this.wait(160);
     
     // Phase 2: Update content
-    this.updateElementContent(elements);
-    this.updateDynamicContent();
+    this.updateAllContent();
     
     // Phase 3: Fade in all elements
-    allElements.forEach(element => {
-      if (element) {
+    allTranslatableElements.forEach(element => {
+      if (element && element.offsetParent !== null) {
         element.classList.remove('language-fade-out');
         element.classList.add('language-fade-in');
       }
     });
     
     // Wait for fade in to complete, then cleanup
-    await this.wait(150);
+    await this.wait(160);
     
-    allElements.forEach(element => {
+    allTranslatableElements.forEach(element => {
       if (element) {
         element.classList.remove('language-fade-in');
       }
     });
   }
 
-  updateElementContent(elements) {
+  getAllTranslatableElements() {
+    const elements = [];
+    
+    // 1. data-i18n attribute'una sahip elementler
+    const dataI18nElements = Array.from(document.querySelectorAll('[data-i18n]'));
+    elements.push(...dataI18nElements);
+    
+    // 2. Dynamic content selectors
+    const dynamicSelectors = [
+      '.experience-desc-1', '.experience-desc-2', '.experience-desc-3',
+      '.experience-desc-4', '.experience-desc-5', '.experience-desc-6',
+      '.experience-desc-7', '.project-desc-1', '.project-desc-2',
+      '.project-desc-3', '.project-desc-4', '.project-desc-5',
+      '.project-desc-6', '.project-desc-7', '.project-desc-8',
+      '.award-desc-1', '.award-desc-2', '.award-desc-3',
+      '.chatbot-loading p', '.try-me-text'
+    ];
+    
+    dynamicSelectors.forEach(selector => {
+      const element = document.querySelector(selector);
+      if (element) {
+        elements.push(element);
+      }
+    });
+    
+    // Duplicate'leri kaldır
+    return [...new Set(elements)];
+  }
+
+  updateAllContent() {
+    // 1. data-i18n elementlerini güncelle
+    const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(element => {
       const key = element.getAttribute('data-i18n');
       const translation = this.getTranslation(key);
@@ -693,20 +736,9 @@ class LanguageManager {
         }
       }
     });
-  }
-
-  getDynamicElements() {
-    const selectors = [
-      '.experience-desc-1', '.experience-desc-2', '.experience-desc-3',
-      '.experience-desc-4', '.experience-desc-5', '.experience-desc-6',
-      '.experience-desc-7', '.project-desc-1', '.project-desc-2',
-      '.project-desc-3', '.project-desc-4', '.project-desc-5',
-      '.project-desc-6', '.project-desc-7', '.project-desc-8',
-      '.award-desc-1', '.award-desc-2', '.award-desc-3',
-      '.chatbot-loading p', 'title', 'meta[name="description"]'
-    ];
     
-    return selectors.map(selector => document.querySelector(selector)).filter(Boolean);
+    // 2. Dynamic content'i güncelle
+    this.updateDynamicContent();
   }
 
   wait(ms) {
@@ -714,9 +746,7 @@ class LanguageManager {
   }
 
   applyTranslations() {
-    const elements = document.querySelectorAll('[data-i18n]');
-    this.updateElementContent(elements);
-    this.updateDynamicContent();
+    this.updateAllContent();
   }
 
   getTranslation(key) {
@@ -735,12 +765,12 @@ class LanguageManager {
   }
 
   updateDynamicContent() {
-    // Update page title
+    // Update page title (görsel transition olmayacak)
     document.title = this.currentLanguage === 'en' 
       ? 'Selman Dedeakayoğulları - AI Engineer Portfolio'
       : 'Selman Dedeakayoğulları - Yapay Zeka Mühendisi Portfolyosu';
     
-    // Update meta description
+    // Update meta description (görsel transition olmayacak)
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = this.currentLanguage === 'en'
@@ -748,7 +778,7 @@ class LanguageManager {
         : 'Bilgisayarlı Görü ve Büyük Dil Modelleri uzmanı Jr. Yapay Zeka Mühendisi. ML, NLP ve yazılım geliştirme projelerini sergileyen portfolyo.';
     }
     
-    // Update experience descriptions
+    // Experience descriptions
     const experienceDescs = [
         { selector: '.experience-desc-1', key: 'experience.descriptions.arena1' },
         { selector: '.experience-desc-2', key: 'experience.descriptions.arena2' },
@@ -759,7 +789,7 @@ class LanguageManager {
         { selector: '.experience-desc-7', key: 'experience.descriptions.exchange' }
     ];
     
-    // Update project descriptions
+    // Project descriptions
     const projectDescs = [
         { selector: '.project-desc-1', key: 'projects.descriptions.social1' },
         { selector: '.project-desc-2', key: 'projects.descriptions.social2' },
@@ -771,13 +801,14 @@ class LanguageManager {
         { selector: '.project-desc-8', key: 'projects.descriptions.gesture' }
     ];
     
-    // Update award descriptions
+    // Award descriptions
     const awardDescs = [
         { selector: '.award-desc-1', key: 'awards.descriptions.teknofest' },
         { selector: '.award-desc-2', key: 'awards.descriptions.eestech' },
         { selector: '.award-desc-3', key: 'awards.descriptions.obss' }
     ];
     
+    // Tüm description'ları güncelle
     [...experienceDescs, ...projectDescs, ...awardDescs].forEach(({ selector, key }) => {
         const element = document.querySelector(selector);
         if (element) {
@@ -788,16 +819,22 @@ class LanguageManager {
         }
     });
     
-    // Update chatbot content if loaded
+    // Chatbot content
     const chatbotLoader = document.querySelector('.chatbot-loading p');
     if (chatbotLoader) {
-        chatbotLoader.textContent = this.getTranslation('chatbot.loading');
+        const translation = this.getTranslation('chatbot.loading');
+        if (translation) {
+            chatbotLoader.textContent = translation;
+        }
     }
 
-    // Update try-me notification if it exists
+    // Try-me notification
     const tryMeText = document.querySelector('.try-me-text');
     if (tryMeText) {
-        tryMeText.textContent = this.getTranslation('chatbot.tryMe');
+        const translation = this.getTranslation('chatbot.tryMe');
+        if (translation) {
+            tryMeText.textContent = translation;
+        }
     }
   }
 
