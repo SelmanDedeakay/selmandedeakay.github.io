@@ -663,7 +663,17 @@ section:nth-child(even) {
     align-items: center;
   }
 }
-
+@media (max-width: 400px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skill-item {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -3348,7 +3358,7 @@ body.theme-loaded {
   
   .blog-excerpt {
     font-size: 0.88rem; /* Daha küçük metin */
-    -webkit-line-clamp: 2; /* Daha az satır */
+    --webkit-line-clamp: 2; /* Daha az satır */
   }
 }
 
@@ -3589,4 +3599,46 @@ body.theme-loaded {
 .language-toggle[data-current="tr"] .lang-option[data-lang="tr"]::before {
   opacity: 1;
   filter: grayscale(0%);
+}/* Language transition effects */
+.language-transition {
+  opacity: 0.3;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.language-fade-out {
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.language-fade-in {
+  opacity: 1;
+  transition: opacity 0.15s ease-in;
+}
+
+/* Prevent layout shift during transitions */
+[data-i18n] {
+  transition: opacity 0.15s ease-in-out;
+}
+
+/* Special handling for longer texts to prevent jumps */
+.experience-desc-1,
+.experience-desc-2,
+.experience-desc-3,
+.experience-desc-4,
+.experience-desc-5,
+.experience-desc-6,
+.experience-desc-7,
+.project-desc-1,
+.project-desc-2,
+.project-desc-3,
+.project-desc-4,
+.project-desc-5,
+.project-desc-6,
+.project-desc-7,
+.project-desc-8,
+.award-desc-1,
+.award-desc-2,
+.award-desc-3 {
+  min-height: 1.2em;
+  transition: opacity 0.15s ease-in-out;
 }
