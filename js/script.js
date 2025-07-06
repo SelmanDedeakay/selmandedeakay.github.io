@@ -143,7 +143,7 @@ const translations = {
         "I'm always interested in hearing about new opportunities and collaborations in AI and machine learning.",
       description2:
         "You can also reach me via the AI Assistant in the bottom right corner of this page.",
-      mailMe: "Mail me",
+      mailMe: "Mail Me",
       linkedinProfile: "LinkedIn Profile",
       githubProfile: "GitHub Profile",
     },
@@ -293,7 +293,7 @@ const translations = {
         "Yapay zeka ve makine öğrenmesi alanındaki yeni fırsatlar ve işbirlikleri hakkında her zaman konuşmaya açığım.",
       description2:
         "Ayrıca sayfanın sağ alt köşesindeki Yapay Zeka Asistanı aracılığıyla da bana ulaşabilirsiniz.",
-      mailMe: "E-posta gönder",
+      mailMe: "E-posta Gönder",
       linkedinProfile: "LinkedIn Profili",
       githubProfile: "GitHub Profili",
     },
