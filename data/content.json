@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "name": "Selman Dedeakayoğulları",
+    "title": "AI Engineer",
+    "email": "selmandedeakayogullari@gmail.com",
+    "location": "Eskişehir, Türkiye",
+    "github": "https://github.com/SelmanDedeakay",
+    "linkedin": "https://linkedin.com/in/selmandedeakayoğulları",
+    "medium": "https://medium.com/@SelmanDedeakayogullari",
+    "cvFile": "assets/selman-cv.pdf",
+    "profileImage": "assets/profile.png",
+    "previewImage": "assets/preview.png"
+  },
+  "hero": {
+    "greeting": {
+      "en": "Hi, I'm",
+      "tr": "Merhaba, ben"
+    },
+    "subtitle": {
+      "en": "AI Engineer",
+      "tr": "Yapay Zeka Mühendisi"
+    },
+    "description": {
+      "en": "Specializing in Large Language Models and Computer Vision",
+      "tr": "Büyük Dil Modelleri ve Bilgisayarlı Görü alanlarında uzmanlaşmış"
+    },
+    "tagline": {
+      "en": "Building intelligent solutions that make a difference",
+      "tr": "Fark yaratan akıllı çözümler geliştiriyorum"
+    }
+  },
+  "about": {
+    "title": {
+      "en": "About Me",
+      "tr": "Hakkımda"
+    },
+    "paragraphs": [
+      {
+        "en": "Known for combining technical expertise with a positive and engaging team spirit, I work in the field of artificial intelligence and software development, particularly focusing on large language models (LLMs) and computer vision.",
+        "tr": "Teknik uzmanlığı pozitif ve ilgi çekici bir takım ruhuyla birleştirmesiyle tanınan, yapay zeka ve yazılım geliştirme alanında, özellikle büyük dil modelleri (LLM'ler) ve bilgisayarlı görü üzerine odaklanarak çalışıyorum."
+      },
+      {
+        "en": "I enjoy generating original ideas and implementing them in the most practical and effective way. I believe that collaboration amplifies success, and I always strive to elevate both performance and team morale in every project I contribute to.",
+        "tr": "Orijinal fikirler üretmekten ve bunları en pratik ve etkili şekilde uygulamaktan keyif alıyorum. İşbirliğinin başarıyı artırdığına inanıyorum ve katkıda bulunduğum her projede hem performansı hem de takım moralini yükseltmeye çalışıyorum."
+      }
+    ],
+    "university": {
+      "en": "Eskişehir Technical University",
+      "tr": "Eskişehir Teknik Üniversitesi"
+    }
+  },
+  "experience": [
+    {
+      "id": "exp-1",
+      "type": "work",
+      "date": "Dec 2023 – March 2025",
+      "position": {
+        "en": "AI Engineer Intern",
+        "tr": "Yapay Zeka Mühendisi Stajyeri"
+      },
+      "company": "Arena",
+      "descriptions": [
+        {
+          "en": "Developing and maintaining enterprise-grade chatbots for clients in Turkey and abroad using Druid AI, a low-code conversational AI platform.",
+          "tr": "Druid AI kullanarak Türkiye ve yurtdışındaki müşteriler için kurumsal düzeyde chatbot'lar geliştirme ve bakımını yapma."
+        },
+        {
+          "en": "Creating advanced solutions powered by LLaMA, GPT-4, GPT-4o, and GPT-4 Vision, with a focus on integrating multimodal understanding and LLM-driven workflows.",
+          "tr": "LLaMA, GPT-4, GPT-4o ve GPT-4 Vision ile çoklu modal anlama ve LLM odaklı iş akışlarını entegre etmeye odaklanarak gelişmiş çözümler oluşturma."
+        }
+      ]
+    },
+    {
+      "id": "exp-2",
+      "type": "work",
+      "date": "Nov 2022 – Jan 2023",
+      "position": {
+        "en": "Software Engineering Intern",
+        "tr": "Yazılım Mühendisliği Stajyeri"
+      },
+      "company": "Turkish Aerospace Industries",
+      "descriptions": [
+        {
+          "en": "Contributed to backend development for various internal modules, focusing on scalable and maintainable software solutions.",
+          "tr": "Ölçeklenebilir ve sürdürülebilir yazılım çözümlerine odaklanarak çeşitli dahili modüller için backend geliştirmeye katkıda bulundum."
+        }
+      ]
+    },
+    {
+      "id": "exp-3",
+      "type": "work",
+      "date": "Jul 2022 – Aug 2022",
+      "position": {
+        "en": "Computer Vision Intern",
+        "tr": "Bilgisayarlı Görü Stajyeri"
+      },
+      "company": "Visea Innovative",
+      "descriptions": [
+        {
+          "en": "Developed deep learning-based classification and segmentation applications using PyTorch and TensorFlow.",
+          "tr": "PyTorch ve TensorFlow kullanarak derin öğrenme tabanlı sınıflandırma ve segmentasyon uygulamaları geliştirdim."
+        }
+      ]
+    },
+    {
+      "id": "edu-1",
+      "type": "education",
+      "date": "2021 – 2025",
+      "position": {
+        "en": "Bachelor of Engineering",
+        "tr": "Mühendislik Lisansı"
+      },
+      "company": "Eskişehir Technical University",
+      "descriptions": [
+        {
+          "en": "Graduated with GPA 3.15/4.0",
+          "tr": "3.15/4.0 GPA ile mezun oldum"
+        }
+      ]
+    },
+    {
+      "id": "edu-2",
+      "type": "education",
+      "date": "2023",
+      "position": {
+        "en": "Exchange Semester",
+        "tr": "Değişim Programı"
+      },
+      "company": "Vorarlberg University of Applied Sciences",
+      "descriptions": [
+        {
+          "en": "Erasmus+ Study Programme - Dornbirn, Austria. Studied AI-focused courses in an international setting.",
+          "tr": "Erasmus+ Çalışma Programı - Dornbirn, Avusturya. Uluslararası bir ortamda AI odaklı dersler aldım."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "icon": "brain",
+      "title": {
+        "en": "Social Media Analysis for Earthquake Victim Reports",
+        "tr": "Deprem Mağdur Raporları için Sosyal Medya Analizi"
+      },
+      "description": {
+        "en": "Developed a multimodal AI system combining LLM-based information extraction from social media with drone-based visual verification. Achieved high accuracy in identifying urgent needs and structural damage.",
+        "tr": "LLM tabanlı sosyal medya bilgi çıkarımı ile drone tabanlı görsel doğrulamayı birleştiren çok modlu bir AI sistemi geliştirdim."
+      },
+      "tags": ["Large Language Models", "NLP", "YOLO", "Computer Vision"],
+      "link": "",
+      "featured": true
+    },
+    {
+      "id": "proj-2",
+      "icon": "images",
+      "title": {
+        "en": "Gendiary: New-Gen Social Media",
+        "tr": "Gendiary: Yeni Nesil Sosyal Medya"
+      },
+      "description": {
+        "en": "Developed an AI-powered diary app that generates personalized, context-aware images from user photos using Stable Diffusion and PyTorch.",
+        "tr": "Stable Diffusion ve PyTorch kullanarak kullanıcı fotoğraflarından kişiselleştirilmiş görseller üreten AI destekli bir günlük uygulaması geliştirdim."
+      },
+      "tags": ["Stable Diffusion", "Computer Vision", "Prompt Engineering", "API Development"],
+      "link": "",
+      "featured": true
+    },
+    {
+      "id": "proj-3",
+      "icon": "robot",
+      "title": {
+        "en": "Agentic Portfolio Bot",
+        "tr": "Agentic Portfolyo Botu"
+      },
+      "description": {
+        "en": "Developed an AI-powered portfolio chatbot using Google Gemini and RAG. The system answers questions about my background and allows direct contact via secure email.",
+        "tr": "Google Gemini ve RAG kullanarak AI destekli bir portfolyo chatbotu geliştirdim. Sistem geçmişim hakkında sorulara cevap veriyor."
+      },
+      "tags": ["Gemini API", "Agentic AI", "RAG"],
+      "link": "",
+      "featured": true
+    },
+    {
+      "id": "proj-4",
+      "icon": "camera",
+      "title": {
+        "en": "Image Captioning Project",
+        "tr": "Görüntü Açıklama Projesi"
+      },
+      "description": {
+        "en": "Fine-tuned several Vision Language Models and optimized pipelines for an AI competition.",
+        "tr": "Bir AI yarışması için çeşitli Vision Language Model'leri fine-tune ettim ve pipeline'ları optimize ettim."
+      },
+      "tags": ["Vision Language Models", "Fine-tuning", "PyTorch"],
+      "link": "",
+      "featured": false
+    },
+    {
+      "id": "proj-5",
+      "icon": "user-check",
+      "title": {
+        "en": "Face Recognition Application",
+        "tr": "Yüz Tanıma Uygulaması"
+      },
+      "description": {
+        "en": "MT-CNN based Face Recognition application. Published an article about it on Medium.",
+        "tr": "MT-CNN tabanlı Yüz Tanıma uygulaması. Medium'da bununla ilgili bir makale yayınladım."
+      },
+      "tags": ["PyTorch", "Computer Vision", "Deep Learning"],
+      "link": "",
+      "featured": false
+    },
+    {
+      "id": "proj-6",
+      "icon": "hand-paper",
+      "title": {
+        "en": "Media Control with Gesture Recognition",
+        "tr": "Hareket Tanıma ile Medya Kontrolü"
+      },
+      "description": {
+        "en": "Machine Learning Course Term Project using MediaPipe and custom algorithms to detect different gestures.",
+        "tr": "MediaPipe ve özel algoritmalar kullanarak farklı hareketleri algılayan Makine Öğrenimi Dersi Dönem Projesi."
+      },
+      "tags": ["Scikit-learn", "MediaPipe", "ML"],
+      "link": "",
+      "featured": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-1",
+      "category": {
+        "en": "Computer Vision",
+        "tr": "Bilgisayarlı Görü"
+      },
+      "icon": "eye",
+      "items": ["OpenCV", "PyTorch", "TensorFlow", "Keras", "CNNs", "YOLO", "Stable Diffusion", "Vision Language Models", "Image Processing", "Object Detection"]
+    },
+    {
+      "id": "skill-2",
+      "category": {
+        "en": "Natural Language Processing",
+        "tr": "Doğal Dil İşleme"
+      },
+      "icon": "comments",
+      "items": ["HuggingFace Transformers", "LangChain", "LangGraph", "Ollama", "Smolagents", "Prompt Engineering", "RAG", "Gemini API", "OpenAI API"]
+    },
+    {
+      "id": "skill-3",
+      "category": {
+        "en": "Data Analysis",
+        "tr": "Veri Analizi"
+      },
+      "icon": "chart-bar",
+      "items": ["Matplotlib", "NumPy", "Pandas", "Seaborn", "Scikit-learn", "SQL"]
+    },
+    {
+      "id": "skill-4",
+      "category": {
+        "en": "Software Engineering",
+        "tr": "Yazılım Mühendisliği"
+      },
+      "icon": "code",
+      "items": ["Python", "Java", "Git", "Flask", "FastAPI", "MongoDB", "SQLite", "Streamlit", "Gradio"]
+    }
+  ],
+  "awards": [
+    {
+      "id": "award-1",
+      "icon": "trophy",
+      "title": "TEKNOFEST T3 AI Hackathon 2024 Finalist",
+      "organization": "T3 (Türkiye Technology Team)",
+      "year": "2024",
+      "description": {
+        "en": "Selected among 200+ teams to develop an LLM-based project within 48 hours at the T3 AI Hackathon.",
+        "tr": "T3 AI Hackathon'da 48 saat içinde LLM tabanlı bir proje geliştirmek için 200+ takım arasından seçildim."
+      }
+    },
+    {
+      "id": "award-2",
+      "icon": "award",
+      "title": "EESTech AI Solutions Challenge",
+      "organization": "EESTEC LC Eskişehir",
+      "year": "2024",
+      "description": {
+        "en": "Created sentimental analysis solution in a hackathon within 4 hours. Achieved 2nd Place.",
+        "tr": "4 saat içinde bir hackathon'da duygu analizi çözümü oluşturdum. 2. oldum."
+      }
+    },
+    {
+      "id": "award-3",
+      "icon": "medal",
+      "title": "OBSS Code Master 2022",
+      "organization": "OBSS",
+      "year": "2022",
+      "description": {
+        "en": "Ranked 1st among university participants in an algorithm-based problem-solving competition.",
+        "tr": "Algoritma tabanlı problem çözme yarışmasında üniversite katılımcıları arasında 1. oldum."
+      }
+    }
+  ],
+  "references": [
+    {
+      "id": "ref-1",
+      "name": "Dr. Abdullatif Baba",
+      "title": {
+        "en": "Assoc. Professor & Researcher",
+        "tr": "Doç. Dr. & Araştırmacı"
+      },
+      "organization": "Kuwait College of Science and Technology",
+      "image": "assets/abdullatif_baba.png"
+    },
+    {
+      "id": "ref-2",
+      "name": "Dr. Sebastian Hegenbart",
+      "title": {
+        "en": "Senior Lecturer",
+        "tr": "Kıdemli Öğretim Görevlisi"
+      },
+      "organization": "Fachhochschule Vorarlberg",
+      "image": "assets/sebastian_hegenbart.png"
+    },
+    {
+      "id": "ref-3",
+      "name": "Alperen Enes Bayar",
+      "title": {
+        "en": "Senior AI Research Engineer",
+        "tr": "Kıdemli AI Araştırma Mühendisi"
+      },
+      "organization": "TURKSAT",
+      "image": "assets/alperen_enes_bayar.png"
+    },
+    {
+      "id": "ref-4",
+      "name": "Dr. Sema Candemir",
+      "title": {
+        "en": "Asst. Professor",
+        "tr": "Dr. Öğr. Üyesi"
+      },
+      "organization": "Eskişehir Technical University",
+      "image": "assets/sema_candemir.png"
+    },
+    {
+      "id": "ref-5",
+      "name": "Dr. Mehmet Koç",
+      "title": {
+        "en": "Assoc. Professor",
+        "tr": "Doç. Dr."
+      },
+      "organization": "Eskişehir Technical University",
+      "image": "assets/mehmet_koc.png"
+    }
+  ],
+  "ui": {
+    "navigation": {
+      "en": ["Home", "About", "Experience", "Projects", "Skills", "Awards", "References", "Blog", "Contact"],
+      "tr": ["Ana Sayfa", "Hakkımda", "Deneyim", "Projeler", "Yetenekler", "Ödüller", "Referanslar", "Blog", "İletişim"]
+    },
+    "buttons": {
+      "downloadCV": {
+        "en": "Download CV",
+        "tr": "CV İndir"
+      },
+      "viewProject": {
+        "en": "View Project",
+        "tr": "Projeyi Gör"
+      },
+      "readMore": {
+        "en": "Read More",
+        "tr": "Devamını Oku"
+      }
+    },
+    "contact": {
+      "title": {
+        "en": "Get In Touch",
+        "tr": "İletişime Geç"
+      },
+      "description": {
+        "en": "I'm always interested in hearing about new opportunities and collaborations in AI and machine learning.",
+        "tr": "Yapay zeka ve makine öğrenimi alanlarındaki yeni fırsatları ve işbirlikleri duymakla her zaman ilgileniyorum."
+      }
+    },
+    "footer": {
+      "copyright": "© 2025 Selman Dedeakayoğulları",
+      "lastUpdated": {
+        "en": "Last Updated: January 2025",
+        "tr": "Son Güncelleme: Ocak 2025"
+      }
+    }
+  }
+}
